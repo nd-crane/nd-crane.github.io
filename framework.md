@@ -1,43 +1,34 @@
-# Framework
+---
+title: "Trusted AI Frameworks Project"
+bibliography: references.bib
+---
+
+# TrustedAI Framework Project
 
 ## Introduction
 
-One of the motivations behind the TrustedAI research consortium is to translate cutting edge Artificial Intelligence (AI) research into **conceptual frameworks** and **concrete tools** to facilitate the **trusted** adoption of AI based technologies by the United States Department of Defense using the United States Navy as a concrete test case. The **Frameworks Project** was intended to be a conduit for integrating both a set of **conceptual best practices** when developing, evaluating and deploying AI technologies, and a **set of software tools** that enable the conceptual frameworks. To facilitate adoption, the project looked to successful software engineering tools and principles such as Continuous Integration/Continuous Deployment (CI/CD) tools that widely adopt software version control systems such as [git](https://git-scm.com/) as well as software repositories like [github](https://github.com) that facilitate team based software development, automated testing and deployment, and issue tracking. Given that AI software is currently implemented in classical "Software 1.0" written in languages like Python, C++, etc, starting with trusted engineering of the traditional software stack is foundational to the practice of TrustedAI. We also recognize that there is a "AI software" lifecycle akin to the CI/CD lifecycle in traditional software engineering that correspond to the "outer ring" in **Figure 1**: that is **Development** of AI software, **Use** of that software in real world deployments, **Analysis** of the AI software performance i.e. &mdash;Trustworthiness&mdash;, and Re-design or Re-training of AI to better meet the underlying system requirements.
+One of the motivations behind the TrustedAI research consortium is to translate cutting edge Artificial Intelligence (AI) research into **conceptual frameworks** and **concrete tools** to facilitate the **trusted** adoption of AI based technologies by the United States Department of Defense using the United States Navy as a concrete test case. The **Frameworks Project** was intended to be a conduit for integrating both a set of **conceptual best practices** when developing, evaluating and deploying AI technologies, and a **set of software tools** that enable the conceptual frameworks. To facilitate adoption, the project looked to successful software engineering tools and principles such as Continuous Integration/Continuous Deployment (CI/CD) tools that widely adopt software version control systems such as [git](https://git-scm.com/) as well as software repositories like [github](https://github.com) that facilitate team based software development, automated testing and deployment, and issue tracking. Given that AI software is currently implemented in classical "Software 1.0" written in languages like Python, C++, etc, starting with trusted engineering of the traditional software stack is foundational to the practice of TrustedAI. We also recognize that there is a "AI software" lifecycle akin to the CI/CD lifecycle in traditional software engineering that correspond to the "outer ring" in **Figure 1**: that is **Development** of AI software, **Use** of that software in real world deployments, **Analysis** of the AI software performance i.e. &mdash;Trustworthiness&mdash;, and Re-design or Re-training of AI to better meet the underlying system requirements. At the most general level, Trustworthy AI should be **lawful**, **ethical** and **robust** throughout the AI System Lifecycle [@Smuha_undated-da].
+![Figure 1: Conceptual Framework Principles for TrustedAI in the AI System Lifecycle](/static/graphic_concept-5.png)
+However, AI software is yet fundamentally different from traditional software implementation because the _software behaviors_ are _learned_ behaviors, not behavior encoded by a programmer in the program through some algorithm. This new type of software has been termed ["Software 2.0"](https://karpathy.medium.com/software-2-0-a64152b37c35) by some of the AI community and is based on the observation that the programming paradigm is being fundamentally altered from implementation of algorithms in the form of code to labeling, curating and engineering data that will be used to **define** software behavior that integrates into a **Chain of Trust** [@Toreini2020-fj] along the ML Pipeline. This observation of the critical nature of training data in the AI based software development process has lead the ["Data-centric"](https://datacentricai.org) AI discipline that aims to create principles and best practices behind systematically engineering data used to construct AI software. The Data-centric AI principles form the second foundational pillar for the frameworks in exploring and adopting tools that facilitate this "data engineering process" in **Data Collection**, **Data Preparation** and **Feature Extraction**.
 
-However, AI software is yet fundamentally different from traditional software implementation because the _software behaviors_ are _learned_ behaviors, not behavior encoded by a programmer in the program through some algorithm. This new type of software has been termed ["Software 2.0"](https://karpathy.medium.com/software-2-0-a64152b37c35) by some of the AI community and is based on the observation that the programming paradigm is being fundamentally altered from implementation of algorithms in the form of code to labeling, curating and engineering data that will be used to **define** software behavior that integrates into a **Chain of Trust** along the ML Pipeline. This observation of the critical nature of training data in the AI based software development process has lead the ["Data-centric"](https://datacentricai.org) AI discipline that aims to create principles and best practices behind systematically engineering data used to construct AI software. The Data-centric AI principles form the second foundational pillar for the frameworks in exploring and adopting tools that facilitate this "data engineering process" in **Data Collection**, **Data Preparation** and **Feature Extraction**.
-
-The T&E Framework Infrastructure connects the various components and toolboxes being developed for the Trusted AI project together into a single coherent system.
-The system provides standardized methods for storage and version control of code, data and documentation.
-There is a minimum viable vocabulary to describe experiments, as well as metadata and storage criterion for model/data outputs such as Neural Network weights.
-Preference is given to Open Source Software and Tools that can either be integrated into the Framework or modified by our software development teams with possible contribution back to their parent project.
-
-This document provides information on how to set up and use the framework.
+At each stage of the ML Pipeline each of the **Six Dimensions of Trust** as identified by [@Liu2021-zw] can be applied. In other words, each step of the ML Pipeline should be engineered with respect to **Explainability**, **Safety & Robustness**, **Non-discrimination & Fairness**, **Accountability and Auditability**, **Environmental Well-being** and **Privacy**. The goal of the Framework tools is to integrate existing software tools or Trusted AI Project outputs with respect to each of these six dimension's of trust that can be used at each _stage_ of the ML Pipeline to create a "Toolbox" for practitioners and evaluators to utilize in enabling each of the dimensions in a modular set of software frameworks. This Framework Infrastructure connects the various components and toolboxes being developed for the Trusted AI project together into a single coherent system. The system provides standardized methods for storage and version control of code, data and documentation. There is a minimum viable vocabulary to describe experiments, as well as metadata and storage criterion for model/data outputs such as Neural Network weights. Preference is given to Open Source Software and Tools that can either be integrated into the Framework or modified by our software development teams with possible contribution back to their parent project.
 
 ## Overview
 
-Trust is ... and comes from details that are in each step in the machine learning cycle.
+Concretely, Trusted AI communities of practice.
+
+<!--Trust is ... and comes from details that are in each step in the machine learning cycle.
 The cycle is the loop of steps _Development_, _Use_, _Analysis_, and _Re-Design_ that is the basis of improving models over time.
 
-<!-- AI models are rarely created and then used with no further adjustments.
+AI models are rarely created and then used with no further adjustments.
 Usually the performance of the model is evaluated and then fed back into an improvement of the model,
 whether that is through more comprehensive training data, adjustments of the encoding/decoding layers, or
 even changes to the model architecture.
 -->
 
-This diagram shows the feedback loop along with the six dimensions of trust in the center, as they apply
-to all the steps.
-
-![Figure 1: Conceptual Framework Principles for TrustedAI in the AI System Lifecycle](/static/graphic_concept-5.png)
-
-Six dimensions of Trust are...
-
-The word "framework" is applied to two different concepts here.
-First, it is used to describe the conceptual understanding of what is needed to provide trusted AI.
-Second it is used to refer to the specific software tools used to implement parts of the conceptual framework.
-
 these are tools that we chose based on criteria:
 
-The core of the framework is the version co ntrol system [Git] and the storage overlay provided by the [Data Version Control][dvc] (DVC) project.
+The core of the framework is the version control system [Git] and the storage overlay provided by the [Data Version Control][dvc] (DVC) project.
 All model code, data preperation code, and training workflows are tracked in as a Git Repository.
 Training data, generated models, and analytics are tracked by DVC.
 DVC provides a way to track file versions in Git, but store the contents elseware.
