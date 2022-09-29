@@ -7,7 +7,7 @@ bibliography: references.bib
 
 ## Introduction
 
-One of the motivations behind the TrustedAI research consortium is to translate cutting edge Artificial Intelligence (AI) research into **conceptual frameworks** and **concrete tools** to facilitate the **trusted** adoption of AI based technologies by the United States Department of Defense using the United States Navy as a concrete test case. The **Frameworks Project** was intended to be a conduit for integrating both a set of **conceptual best practices** when developing, evaluating and deploying AI technologies, and a **set of software tools** that enable the conceptual frameworks. To facilitate adoption, the project looked to successful software engineering tools and principles such as Continuous Integration/Continuous Deployment (CI/CD) tools that widely adopt software version control systems such as [git](https://git-scm.com/) as well as software repositories like [github](https://github.com) that facilitate team based software development, automated testing and deployment, and issue tracking. Given that AI software is currently implemented in classical "Software 1.0" written in languages like Python, C++, etc, starting with trusted engineering of the traditional software stack is foundational to the practice of TrustedAI. We also recognize that there is a "AI software" lifecycle akin to the CI/CD lifecycle in traditional software engineering that correspond to the "outer ring" in **Figure 1**: that is **Development** of AI software, **Use** of that software in real world deployments, **Analysis** of the AI software performance i.e. &mdash;Trustworthiness&mdash;, and Re-design or Re-training of AI to better meet the underlying system requirements. At the most general level, Trustworthy AI should be **lawful**, **ethical** and **robust** throughout the AI System Lifecycle [@Smuha_undated-da].
+One of the motivations behind the TrustedAI research consortium is to translate cutting edge Artificial Intelligence (AI) research into **conceptual frameworks** and **concrete tools** to facilitate the **trusted** adoption of AI based technologies by the United States Department of Defense using the United States Navy as a concrete test case. The **Frameworks Project** was intended to be a conduit for integrating both a set of **conceptual best practices** when developing, evaluating and deploying AI technologies, and a **set of software tools** that enable the conceptual frameworks. To facilitate adoption, the project looked to successful software engineering tools and principles such as [Continuous Integration/Continuous Delivery (CI/CD)](https://resources.github.com/ci-cd/) tools that widely adopt software version control systems such as [git](https://git-scm.com/) as well as software repositories like [github](https://github.com) that facilitate team based software development, automated testing and deployment, and issue tracking. Given that AI software is currently implemented in classical "Software 1.0" written in languages like Python, C++, etc, starting with trusted engineering of the traditional software stack is foundational to the practice of TrustedAI. We also recognize that there is a "AI software" lifecycle akin to the CI/CD lifecycle in traditional software engineering that correspond to the "outer ring" in **Figure 1**: that is **Development** of AI software, **Use** of that software in real world deployments, **Analysis** of the AI software performance i.e. &mdash;Trustworthiness&mdash;, and Re-design or Re-training of AI to better meet the underlying system requirements. At the most general level, Trustworthy AI should be **lawful**, **ethical** and **robust** throughout the AI System Lifecycle [@Smuha_undated-da].
 ![Figure 1: Conceptual Framework Principles for TrustedAI in the AI System Lifecycle](/static/graphic_concept-5.png)
 However, AI software is yet fundamentally different from traditional software implementation because the _software behaviors_ are _learned_ behaviors, not behavior encoded by a programmer in the program through some algorithm. This new type of software has been termed ["Software 2.0"](https://karpathy.medium.com/software-2-0-a64152b37c35) by some of the AI community and is based on the observation that the programming paradigm is being fundamentally altered from implementation of algorithms in the form of code to labeling, curating and engineering data that will be used to **define** software behavior that integrates into a **Chain of Trust** [@Toreini2020-fj] along the ML Pipeline. This observation of the critical nature of training data in the AI based software development process has lead the ["Data-centric"](https://datacentricai.org) AI discipline that aims to create principles and best practices behind systematically engineering data used to construct AI software. The Data-centric AI principles form the second foundational pillar for the frameworks in exploring and adopting tools that facilitate this "data engineering process" in **Data Collection**, **Data Preparation** and **Feature Extraction**.
 
@@ -15,7 +15,9 @@ At each stage of the ML Pipeline each of the **Six Dimensions of Trust** as iden
 
 ## Overview
 
-Concretely, Trusted AI communities of practice.
+As outlined in the [Introduction](#Introduction), part of the goal for the Frameworks project was to identify tools that could be leveraged as part of the AI software lifecycle that provided functionality with respect to the dimensions of trust. One attribute of trust for (open source) software tools is that there is an active community of developers maintaining the tool and providing a broader community of support for using the tools. After initial consultation with the CRANE Technical Point of Contact (TPOC), it was decided[Git](https://git-scm.com/) would be the primary software source control tool and [Github](https://github.com/) as the initial source code repository. Github is provides a commercial software source control and collaborative development environment that is friendly to open source developers in providing free public/private repositories. Other options for git source repositories exist such as [Gitlab](https://about.gitlab.com/) and the self-hosted [Gitlab Community Edition](https://gitlab.com/rluna-gitlab/gitlab-ce) that provide migration paths for git-centric source code repositories if security and privacy requirements require self-hosted options.
+
+One way to enable Data-Centric AI [@Liang2022-yz] within the "git ecosystem" is through the use of [Data Version Control](https://dvc.org/) (DVC) that facilitates tracking of ML Models and Datasets by direct integration into the git version control system. DVC allows data to be versioned and then stored outside git repositories in a wide variety of data storage systems facilitating the use of larger datasets and storage systems than could be otherwise accommodated by git or through the use of [Git Large File Storage](https://git-lfs.github.com/). DVC also has tools to help facilitate experiment reproducibility by maintaining information about input data, configuration and code used to run an experiment all within the git source control environment. The _general_ methodology for the _core_ Trusted AI Framework is all model code, data preparation code, and training workflows are tracked in as a **Git Repository**. Training data, generated models, and analytics are tracked by **DVC** and a **seperate data storage environment**.
 
 <!--Trust is ... and comes from details that are in each step in the machine learning cycle.
 The cycle is the loop of steps _Development_, _Use_, _Analysis_, and _Re-Design_ that is the basis of improving models over time.
@@ -24,18 +26,12 @@ AI models are rarely created and then used with no further adjustments.
 Usually the performance of the model is evaluated and then fed back into an improvement of the model,
 whether that is through more comprehensive training data, adjustments of the encoding/decoding layers, or
 even changes to the model architecture.
--->
 
 these are tools that we chose based on criteria:
 
-The core of the framework is the version control system [Git] and the storage overlay provided by the [Data Version Control][dvc] (DVC) project.
-All model code, data preperation code, and training workflows are tracked in as a Git Repository.
-Training data, generated models, and analytics are tracked by DVC.
-DVC provides a way to track file versions in Git, but store the contents elseware.
-This is useful since training data and models tend to be large and numerious, both things that become a liability when stored directly in a Git repository.
+-->
 
-[git]: https://git-scm.com/
-[dvc]: https://dvc.org/
+## General Workflow Steps
 
 The workflow steps are
 
@@ -47,8 +43,6 @@ The workflow steps are
 5. Update code, run experiments
 6. Check in changes to both code and data
 
-## Trusted Storage
-
 ## Installation and Set Up
 
 The framework requires [Python] to operate.
@@ -59,9 +53,10 @@ Next, make sure [Git] is installed and [set up your git project](#set-up-reposit
 
 ### Installing Python
 
-Python is installed differently depending on the operating system on your computer.
+Python has become over the course of the last decade
+installed differently depending on the operating system on your computer.
 
-- **MacOS** Easist way is with [Homebrew].
+- **MacOS** Easiest way is with [Homebrew].
   ```
   $ brew install pyenv
   $ pyenv install 3.10.6
@@ -144,8 +139,11 @@ Configure DVC with remotes.
 
 ## Projects
 
-- [Maintenance Operators Ontology](https://nd-crane.github.io/moo)
+Several TrustedAI projects were used as use case/test environments for the Core Framework tools. These projects provided different data/machine learning model requirements to explore how effective the tools and methodology are in
+
+- [Knowledge Graph Construction using Natural Language Processing Tools](https://github.com/nd-crane/shipfailures-kg)
 - [Paper Analytical Devices](https://nd-crane.github.io/paper-analytical-devices)
+- [Stats project]()
 
 ## Tutorial
 
