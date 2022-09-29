@@ -15,9 +15,9 @@ At each stage of the ML Pipeline each of the **Six Dimensions of Trust** as iden
 
 ## Overview
 
-As outlined in the [Introduction](#Introduction), part of the goal for the Frameworks project was to identify tools that could be leveraged as part of the AI software lifecycle that provided functionality with respect to the dimensions of trust. One attribute of trust for (open source) software tools is that there is an active community of developers maintaining the tool and providing a broader community of support for using the tools. After initial consultation with the CRANE Technical Point of Contact (TPOC), it was decided[Git](https://git-scm.com/) would be the primary software source control tool and [Github](https://github.com/) as the initial source code repository. Github is provides a commercial software source control and collaborative development environment that is friendly to open source developers in providing free public/private repositories. Other options for git source repositories exist such as [Gitlab](https://about.gitlab.com/) and the self-hosted [Gitlab Community Edition](https://gitlab.com/rluna-gitlab/gitlab-ce) that provide migration paths for git-centric source code repositories if security and privacy requirements require self-hosted options.
+As outlined in the [Introduction](#Introduction), part of the goal for the Frameworks project was to identify tools that could be leveraged as part of the AI software lifecycle that provided functionality with respect to the dimensions of trust. One attribute of trust for (open source) software tools is that there is an active community of developers maintaining the tool and providing a broader community of support for using the tools. After initial consultation with the stakeholders and project members, it was decided that [Git](https://git-scm.com/) would be the primary software source control tool and [Github](https://github.com/) as the initial source code repository. Github is provides a commercial software source control and collaborative development environment that is friendly to open source developers in providing free public/private repositories. Other options for git source repositories exist such as [Gitlab](https://about.gitlab.com/) and the self-hosted [Gitlab Community Edition](https://gitlab.com/rluna-gitlab/gitlab-ce) that provide migration paths for git-centric source code repositories if security and privacy requirements require self-hosted options.
 
-One way to enable Data-Centric AI [@Liang2022-yz] within the "git ecosystem" is through the use of [Data Version Control](https://dvc.org/) (DVC) that facilitates tracking of ML Models and Datasets by direct integration into the git version control system. DVC allows data to be versioned and then stored outside git repositories in a wide variety of data storage systems facilitating the use of larger datasets and storage systems than could be otherwise accommodated by git or through the use of [Git Large File Storage](https://git-lfs.github.com/). DVC also has tools to help facilitate experiment reproducibility by maintaining information about input data, configuration and code used to run an experiment all within the git source control environment. The _general_ methodology for the _core_ Trusted AI Framework is all model code, data preparation code, and training workflows are tracked in as a **Git Repository**. Training data, generated models, and analytics are tracked by **DVC** and a **seperate data storage environment**.
+One way to enable Data-Centric AI [@Liang2022-yz] within the "git ecosystem" is through the use of [Data Version Control](https://dvc.org/) (DVC) that facilitates tracking of ML Models and Datasets by direct integration into the git version control system. DVC allows data to be versioned and then stored outside git repositories in a wide variety of data storage systems facilitating the use of larger datasets and storage systems than could be otherwise accommodated by git or through the use of [Git Large File Storage](https://git-lfs.github.com/). DVC also has tools to help facilitate experiment reproducibility by maintaining information about input data, configuration and code used to run an experiment all within the git source control environment. The _general_ methodology for the _core_ Trusted AI Framework is all model code, data preparation code, and training workflows are tracked in as a **Git Repository**. Training data, generated models, and analytics are tracked by **DVC** and a **separate data storage environment**.
 
 <!--Trust is ... and comes from details that are in each step in the machine learning cycle.
 The cycle is the loop of steps _Development_, _Use_, _Analysis_, and _Re-Design_ that is the basis of improving models over time.
@@ -31,7 +31,9 @@ these are tools that we chose based on criteria:
 
 -->
 
-## General Workflow Steps
+## Methodology
+
+### General Workflow Steps
 
 The workflow steps are
 
@@ -43,7 +45,7 @@ The workflow steps are
 5. Update code, run experiments
 6. Check in changes to both code and data
 
-## Installation and Set Up
+### Installation and Set Up
 
 The framework requires [Python] to operate.
 If you don't have a recent version of python installed, see the section [Installing Python](#installing-python).
@@ -51,7 +53,7 @@ If you don't have a recent version of python installed, see the section [Install
 
 Next, make sure [Git] is installed and [set up your git project](#set-up-repository).
 
-### Installing Python
+#### Installing Python
 
 Python has become over the course of the last decade
 installed differently depending on the operating system on your computer.
@@ -64,7 +66,7 @@ installed differently depending on the operating system on your computer.
 - **Linux**...how?
 - **Windows**...no idea
 
-### Set Up Repository
+#### Set Up Github Repository
 
 All AI projects are expected to be in a Git repository.
 If there isn't already one set up, make a new one by creating a new directory, installing PDM, and then using `git init` to initialize a new git repository. The detailed steps follows.
@@ -72,7 +74,8 @@ There are also many guides online if you want more information, especially on [u
 
 1. Create a new directory for the project `mkdir my-ai-project`
 2. Enter the directory `cd my-ai-project`
-3. Set up [PDM] `pip install --user pdm`
+3. Set up [PDM]
+   `pip install --user pdm`
 4. Initialize PDM
    ```$ pdm init
    Creating a pyproject.toml for PDM...
