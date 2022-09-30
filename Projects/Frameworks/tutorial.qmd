@@ -1,18 +1,17 @@
 ---
-title: "Frameworks Tutorial"
-bibliography: tai_framework.bib
+title: "Trusted AI Framework Tutorial"
+number-sections: true
 ---
 
 # Tutorial
 
-This tutorial shows how to set up the framework and create a new model.
-Begin by installing Git (see @sec-installing-git) and if needed installing Python (@sec-installing-python).
-Using the command line, create a new directory for the project:
+This tutorial will gide you with setting up the framework and running a simple model.
+Begin by [installing Git](#) and [installing Python](#), if needed.
+Using the command line, type the following to create a new directory for the new project:
 
     mkdir ai-tutorial
 
 Enter the new directory and initialize PDM. (Don't type the `$` character—it is used to indicate what you should type into the command prompt)
-(TODO: talk about pyenv and installing PDM)
 
     $ cd ai-tutorial
     $ pdm init
@@ -72,28 +71,3 @@ Lets set up DVC and add this data to it.
 
 
 
-# Parking
-
-## Trusted Storage  {#sec-trusted-storage}
-
-*Trusted Storage* refers to the steps needed to keep intellectual control over an AI model.
-This means that you can point to the exact code used to construct each version of the model, as well as the exact training data used, how the data was preprocessed, and the parameters used for each expeirment. 
-The foundation is [Git] as a version control system.
-On top of that we add a storage overlay provided by the [Data Version Control][dvc] (DVC) project.
-DVC provides a way to track file versions in Git, but store the contents elseware, which is useful since training data and models tend to be large files, something Git is not optimized for.
-
-DVC also provides *pipelines* which are essentailly receipies used for each step in a training workflow.
-These are similar in spirit to a *Makefile* as used in software development.
-
-  [git]: https://git-scm.com/
-  [dvc]: https://dvc.org/
-
-## General Workflow Steps
-
-Once a project is set up, the general workflow is:
-
-1. Add or update data files, and download existing data files
-1. Update code, run experiments
-1. Check in changes to both code and data
-
-We will now go through each step in detail.
