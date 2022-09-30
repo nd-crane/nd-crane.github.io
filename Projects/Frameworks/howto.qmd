@@ -1,0 +1,128 @@
+---
+title: "Framework How To"
+bibliography: tai_framework.bib
+---
+
+# Framework How To
+
+This page contains receipies on how to do tasks with the framework.
+
+## Installation and Set Up
+
+The framework requires [Python] to operate.
+See the section @sec-instaling=python if you don't have a recent version of python installed.
+All projects are expected to be in a Git repository.
+Make sure [Git] is installed by typing `git` and (see section @sec-instaling-git)
+
+If you have expierence with Git, feel free to skip to the section @sec-trusted-storage.
+
+There are also many guides online if you want more information, especially on [using Git][github-git].
+
+### Getting an expsiting repository
+
+Each project needs to live in a Git repository.
+If there is already a git repository set up, you can *clone* it to make a local copy on your computer.
+The exact details depend on where the repository is hosted, but the command will have the form
+
+    git clone https://github.com/nd-crane/moo.git
+
+Where the `git clone` is the command the the URL will be the repository you want to make a local copy of.
+
+### Making a new repository
+
+If there isn't a repository set up already one set up, make a new one by creating a new directory,
+and then using `git init` to initialize a new git repository.
+The command line steps are:
+
+    mkdir my-ai-project
+    cd my-ai-project
+    git init
+
+Once you do this, you can then add some files and make the first commit.
+A good first file is the `README` file which should give a description of what this repository is.
+for each file or directory in your project, run `git add` for it to tell Git you want to track changes to that file.
+
+    [edit README file]
+    git add README
+    git commit -m "Initial Commit"
+
+### PDM
+
+This documentation assumes you are using [PDM] as a package maanger.
+
+
+[pdm]: https://pdm.fming.dev/latest/
+
+
+### Install DVC
+
+Since the [PDM] pacakge manager is installed, we can use that to install DVC:
+
+```
+$ pdm add dvc
+Adding packages to default dependencies: dvc
+🔒 Lock successful
+Changes are written to pdm.lock.
+Changes are written to pyproject.toml.
+Synchronizing working set with lock file: 85 to add, 0 to update, 0 to remove
+
+🎉 All complete!
+```
+
+Configure DVC with remotes.
+
+[python]: https://www.python.org/
+[pyenv]: https://github.com/pyenv/pyenv
+[pdm]: https://pdm.fming.dev/latest/
+[homebrew]: https://brew.sh/
+[github-git]: https://github.com/git-guides
+
+## Common Tasks
+
+### Download a dataset
+
+### Add or Update a dataset
+
+### Create a Workflow
+
+
+## Trusted Process
+
+DVC provides *pipelines* which are receipies used for each step in a training workflow.
+These are similar in spirit to a *Makefile* as used in software development.
+Pipelines let us record the exact sequence of commands as well as the command-line options used, for a training sequence.
+They also help new people get up to speed quickly on training and testing models.
+
+
+
+## How-Tos
+
+This section contains more detailed descriptions for topics that need them.
+
+
+### Instaling Python {#sec-instaling-python}
+
+The framework is implimented in python, and you need version 3.9 or greater.
+To find the version of python you have installed run `python3 -V`.
+
+The steps needed to install Python depends on the operating system.
+
+*All this is placeholder. Perhaps there is an online tutorial elsewhere to explain this better?*
+
+- **MacOS** Easiest way is with [Homebrew].
+  ```
+  $ brew install pyenv
+  $ pyenv install 3.10.6
+  ```
+- **Linux**...how?
+- **Windows**...no idea
+
+### Instaling Git {#sec-instaling-git}
+
+fill in.
+
+### Installing PDM {#sec-installing-pdm}
+
+fill in.
+
+
