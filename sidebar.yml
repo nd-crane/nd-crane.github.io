@@ -1,0 +1,11 @@
+website:
+  sidebar:
+    contents:
+      - index.qmd
+      - section: Projects
+        contents:
+          - Projects/Frameworks/framework.qmd
+          - section: Frameworks Tutorials
+            contents:
+              - Projects/Frameworks/tutorial1.qmd
+          - Projects/KG_NLP/kg_nlp.qmd
