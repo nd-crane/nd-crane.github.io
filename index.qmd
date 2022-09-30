@@ -1,0 +1,7 @@
+---
+title: "Trusted AI"
+description: Research on best practices for Trusted Artificial Intelligence.
+creator: "@charlesvardeman"
+---
+
+Placeholder for overall ND-Crane TrustedAI Project Decsriptions.

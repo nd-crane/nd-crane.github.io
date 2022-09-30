@@ -1,0 +1,35 @@
+project:
+  type: website
+  resources:
+    - "www/*"
+  preview:
+    port: 3000
+    browser: false
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+website:
+  title: "Notre Dame - Crane TrustedAI"
+  description: "Research on the development of TrustedAI"
+  twitter-card: true
+  open-graph: true
+  reader-mode: true
+  page-navigation: true
+  repo-branch: quarto
+  repo-url: https://github.com/nd-crane/nd-crane.github.io
+  repo-actions: [issue]
+  navbar:
+    background: primary
+    search: true
+    right:
+      - icon: github
+        href: https://github.com/nd-crane/
+  sidebar:
+    style: "floating"
+
+metadata-files:
+  - sidebar.yml
