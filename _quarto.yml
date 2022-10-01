@@ -19,7 +19,7 @@ website:
   open-graph: true
   reader-mode: true
   page-navigation: true
-  repo-branch: quarto
+  repo-branch: main
   repo-url: https://github.com/nd-crane/nd-crane.github.io
   repo-actions: [issue]
   navbar:
