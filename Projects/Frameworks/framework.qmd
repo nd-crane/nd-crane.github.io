@@ -11,7 +11,7 @@ One of the motivations behind the TrustedAI research consortium is to translate 
 
 However, AI software is yet fundamentally different from traditional software implementation because the _software behaviors_ are _learned_ behaviors, not behavior encoded by a programmer in the program through some algorithm. This new type of software has been termed ["Software 2.0"](https://karpathy.medium.com/software-2-0-a64152b37c35) by some of the AI community and is based on the observation that the programming paradigm is being fundamentally altered from implementation of algorithms in the form of code to labeling, curating and engineering data that will be used to **define** software behavior that integrates into a **Chain of Trust** [@Toreini2020-fj] along the ML Pipeline. This observation of the critical nature of training data in the AI based software development process has lead the ["Data-centric"](https://datacentricai.org) AI discipline that aims to create principles and best practices behind systematically engineering data used to construct AI software. The Data-centric AI principles form the second foundational pillar for the frameworks in exploring and adopting tools that facilitate this "data engineering process" in **Data Collection**, **Data Preparation** and **Feature Extraction**.
 
-At each stage of the ML Pipeline each of the **Six Dimensions of Trust** as identified by [@Liu2021-zw] can be applied. In other words, each step of the ML Pipeline should be engineered with respect to **Explainability**, **Safety & Robustness**, **Non-discrimination & Fairness**, **Accountability and Auditability**, **Environmental Well-being** and **Privacy**. The goal of the Framework tools is to integrate existing software tools or Trusted AI Project outputs with respect to each of these six dimension's of trust that can be used at each _stage_ of the ML Pipeline to create a "Toolbox" for practitioners and evaluators to utilize in enabling each of the dimensions in a modular set of software frameworks. This Framework Infrastructure connects the various components and toolboxes being developed for the Trusted AI project together into a single coherent system. The system provides standardized methods for storage and version control of code, data and documentation. There is a minimum viable vocabulary to describe experiments, as well as metadata and storage criterion for model/data outputs such as Neural Network weights. Preference is given to Open Source Software and Tools that can either be integrated into the Framework or modified by our software development teams with possible contribution back to their parent project.
+At each stage of the ML Pipeline each of the **Six Dimensions of Trust** as identified by [@Liu2022-ie] can be applied. In other words, each step of the ML Pipeline should be engineered with respect to **Explainability**, **Safety & Robustness**, **Non-discrimination & Fairness**, **Accountability and Auditability**, **Environmental Well-being** and **Privacy**. The goal of the Framework tools is to integrate existing software tools or Trusted AI Project outputs with respect to each of these six dimension's of trust that can be used at each _stage_ of the ML Pipeline to create a "Toolbox" for practitioners and evaluators to utilize in enabling each of the dimensions in a modular set of software frameworks. This Framework Infrastructure connects the various components and toolboxes being developed for the Trusted AI project together into a single coherent system. The system provides standardized methods for storage and version control of code, data and documentation. There is a minimum viable vocabulary to describe experiments, as well as metadata and storage criterion for model/data outputs such as Neural Network weights. Preference is given to Open Source Software and Tools that can either be integrated into the Framework or modified by our software development teams with possible contribution back to their parent project.
 
 ## Overview
 
@@ -28,10 +28,46 @@ whether that is through more comprehensive training data, adjustments of the enc
 even changes to the model architecture.
 
 these are tools that we chose based on criteria:
+-->
+<!--
+Six dimensions of Trust are
 
+1. Safety & Robustness
+1. Non-discrimination & Fairness
+1. Privacy
+1. Environmental Well being
+1. Accountability & Auditability
+1. Explainability
+
+
+For this framework, there are in fact two, at different conceptual levels.
+The first framework is the overall conceptual understanding of what is needed to provide trusted AI.
+This includes the six dimensions of trust, as well as things that cannot be entirely by a computer.
+The second framework is the specific software tools used to implement parts of the conceptual framework, including those in these Git repositories.
+
+This documentation is for the latter framework, the specific software tools we have assembled to help implement parts of a trusted AI pipeline.
+We have assembled these tools to not only be useful but to also come from sustainable open source communities.
+This critera should not only provide a large community help with problems, but will also help with hiring and training new users.
+
+The documentation is organizeed around a sequence of "big topics" which give the goals and a workflow for an element of trust.
+Then there is a Cookbook that provides exact commands and steps to carry out these tasks, a FAQ for problems, and Tutorials for those who learn best by doing.
+
+This is a living document, so feedback would be welcome.
 -->
 
+## Military Considerations
+
+
 ## Methodology
+Bowne et al [@Bowne2022-rc]
+
+## Projects
+
+Several TrustedAI projects were used as use case/test environments for the Core Framework tools. These projects provided different data/machine learning model requirements to explore how effective the tools and methodology are in
+
+- [Knowledge Graph Construction using Natural Language Processing Tools](https://github.com/nd-crane/shipfailures-kg)
+- [Paper Analytical Devices](https://nd-crane.github.io/paper-analytical-devices)
+- [Stats project]()
 
 ### General Workflow Steps
 
@@ -140,13 +176,6 @@ Configure DVC with remotes.
 
 ### Create a Workflow
 
-## Projects
-
-Several TrustedAI projects were used as use case/test environments for the Core Framework tools. These projects provided different data/machine learning model requirements to explore how effective the tools and methodology are in
-
-- [Knowledge Graph Construction using Natural Language Processing Tools](https://github.com/nd-crane/shipfailures-kg)
-- [Paper Analytical Devices](https://nd-crane.github.io/paper-analytical-devices)
-- [Stats project]()
 
 ## Tutorial
 

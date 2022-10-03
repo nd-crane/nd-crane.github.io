@@ -4,8 +4,10 @@ website:
       - index.qmd
       - section: Projects
         contents:
-          - Projects/Frameworks/framework.qmd
-          - section: Frameworks Tutorials
+          - section: Frameworks
             contents:
+              - Projects/Frameworks/framework.qmd
               - Projects/Frameworks/tutorial1.qmd
-          - Projects/KG_NLP/kg_nlp.qmd
+          - section: Knowledge Graphs and NLP
+            contents:
+              - Projects/KG_NLP/kg_nlp.qmd
