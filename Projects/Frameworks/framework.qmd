@@ -28,10 +28,45 @@ whether that is through more comprehensive training data, adjustments of the enc
 even changes to the model architecture.
 
 these are tools that we chose based on criteria:
+-->
+<!--
+Six dimensions of Trust are
 
+1. Safety & Robustness
+1. Non-discrimination & Fairness
+1. Privacy
+1. Environmental Well being
+1. Accountability & Auditability
+1. Explainability
+
+
+For this framework, there are in fact two, at different conceptual levels.
+The first framework is the overall conceptual understanding of what is needed to provide trusted AI.
+This includes the six dimensions of trust, as well as things that cannot be entirely by a computer.
+The second framework is the specific software tools used to implement parts of the conceptual framework, including those in these Git repositories.
+
+This documentation is for the latter framework, the specific software tools we have assembled to help implement parts of a trusted AI pipeline.
+We have assembled these tools to not only be useful but to also come from sustainable open source communities.
+This critera should not only provide a large community help with problems, but will also help with hiring and training new users.
+
+The documentation is organizeed around a sequence of "big topics" which give the goals and a workflow for an element of trust.
+Then there is a Cookbook that provides exact commands and steps to carry out these tasks, a FAQ for problems, and Tutorials for those who learn best by doing.
+
+This is a living document, so feedback would be welcome.
 -->
 
+
+
 ## Methodology
+
+
+## Projects
+
+Several TrustedAI projects were used as use case/test environments for the Core Framework tools. These projects provided different data/machine learning model requirements to explore how effective the tools and methodology are in
+
+- [Knowledge Graph Construction using Natural Language Processing Tools](https://github.com/nd-crane/shipfailures-kg)
+- [Paper Analytical Devices](https://nd-crane.github.io/paper-analytical-devices)
+- [Stats project]()
 
 ### General Workflow Steps
 
@@ -140,13 +175,6 @@ Configure DVC with remotes.
 
 ### Create a Workflow
 
-## Projects
-
-Several TrustedAI projects were used as use case/test environments for the Core Framework tools. These projects provided different data/machine learning model requirements to explore how effective the tools and methodology are in
-
-- [Knowledge Graph Construction using Natural Language Processing Tools](https://github.com/nd-crane/shipfailures-kg)
-- [Paper Analytical Devices](https://nd-crane.github.io/paper-analytical-devices)
-- [Stats project]()
 
 ## Tutorial
 
