@@ -35,10 +35,11 @@ One way to enable Data-Centric AI [@Liang2022-yz] within the "GitOps ecosystem" 
 
 ## TAI Projects as Framework Testbeds
 
-Several TrustedAI projects were used as use case/test environments for the Core Framework tools. These projects provided different data/machine learning model requirements to explore how effective the tools and methodology are in
+Several TrustedAI projects were used as use case/test environments for the Core Framework tools during the first year of TrustedAI. These projects provided different data/machine learning model requirements to explore how effective the tools and methodology are in
 
 - [Knowledge Graph Construction using Natural Language Processing Tools](https://github.com/nd-crane/shipfailures-kg)
-- [Paper Analytical Devices](https://nd-crane.github.io/paper-analytical-devices)
+<!-- 
+- [Application to Vision Task Workflow](https://nd-crane.github.io/paper-analytical-devices)
 - [Stats project]()
-
+ -->
 
