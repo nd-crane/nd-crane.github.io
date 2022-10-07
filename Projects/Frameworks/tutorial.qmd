@@ -1,19 +1,26 @@
 ---
 title: "Trusted AI Framework Tutorial"
 number-sections: true
+bibliography: tai_framework.bib
 ---
 
 # Tutorial
 
-This tutorial will gide you with setting up the framework and running a simple model.
-Begin by [installing Git](#) and [installing Python](#), if needed.
+This tutorial will guide you with setting up the framework and running a simple model.
+Begin by installing Git (see @sec-installing-git) and if needed installing Python (@sec-installing-python).
 Using the command line, type the following to create a new directory for the new project:
 
     mkdir ai-tutorial
 
-Enter the new directory and initialize PDM. (Don't type the `$` character—it is used to indicate what you should type into the command prompt)
+We will now go into the new directory and initialize PDM.
+First, tell PDM to use the PEP 582 method of storing dependencies.
+(Don't type the `$` character—it is used to mark the commands typed into the terminal,)
 
     $ cd ai-tutorial
+    $ pdm config --local python.use_venv False
+
+And now have PDM generate an initital manifest.
+
     $ pdm init
     Creating a pyproject.toml for PDM...
     Please enter the Python interpreter to use
@@ -33,41 +40,104 @@ Enter the new directory and initialize PDM. (Don't type the `$` character—it i
     Python requires('*' to allow any) (>=3.10):
     Changes are written to pyproject.toml.
 
-PDM has a few prompts.
-You can see the answers in the text above.
-For the python version, use the one that you had previously installed—usually the first option. So we chose `0`.
-Then type `y` to set up a virtualenv.
-Then type `n` since this is not going to be a PyPI library.
-For the next four options, press Enter to choose the defaults.
-
-Now lets create a machine learning model.
-Open a text editor and save the following as the file `model.py`
-
-```python
-#!/bin/env python
-
-# enter simple pytorch model
-```
+PDM will give a few prompts.
+For the python version, use the one that you had previously installed—usually the first option.
+So chose `0`.
+Type `y` to set up a virtualenv.
+And then type `n` since will not be a PyPI library.
+For the next four options press Enter to choose the defaults.
+At the end, PDM will create a file named `pyproject.toml`.
 
 Lets create a new git repository for this model.
 
     $ git init
     Initialized empty Git repository in /ai-tutorial/.git/
-    $ git add pyproject.toml model.py
+    $ git add .pdm.toml pyproject.toml
     $ git commit -m "Initial Commit"
     [main (root-commit) 7fc208a] Initial Commit
      1 file changed, 14 insertions(+)
+     create mode 100644 .pdm.toml
      create mode 100644 pyproject.toml
-     create mode 100644 model.py
     ```
 
-Now lets grab some training data.
-(Which training data?)
+Now lets create a machine learning model.
+For this tutorial, we will use the PyTorch [beginner quickstart project](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html).
 
-Lets set up DVC and add this data to it.
-(Set up a local remote.)
+Download the quickstart source code from GitHub:
 
-    pdm dvc ...
+    curl https://raw.githubusercontent.com/pytorch/tutorials/master/beginner_source/basics/quickstart_tutorial.py > quickstart_tutorial.py
+
+This code uses some external Python models, so we need to tell PDM to fetch them:
+
+    pdm add torch torchvision
+
+Now add DVC.
+
+    $ pdm add dvc
+    $ pdm run dvc init
+
+Lets commit our changes to the local Git repository
+
+    $ git add .dvc .dvcignore quickstart_tutorial.py
+    $ git commit -m "Adding DVC and model code"
+
+And now lets run the model.
+The first part of the model will download the training data.
+It will then run 5 epochs of the training cycle.
+
+    pdm run python quickstart_tutorial
 
 
 
+
+# Parking
+
+## james example
+
+PDM should be installed as described in the [Installation instructions](https://pdm.fming.dev/latest/#recommended-installation-method).
+
+## Data Version Control (DVC)
+
+### Program Execution
+
+The first place to start using DVC is to wrap the execution of the model with DVC, allowing dvc to track specified dependencies, parameters and outputs. 
+
+At the moment, our primary dependency is the python file itself, and we should also include the pyproject.toml and pdm.lock files as our results might change if we change something about our dependencies.
+
+```bash
+pdm run dvc stage add -n tutorial -d quickstart_tutorial.py -d pyproject.toml -d pdm.lock python quickstart_tutorial.py
+```
+
+### Reproducing Results
+
+DVC allows us to reproduce the results by running `pdm run dvc repro`. This will execute the code and track the information we have told DVC to track. It stores this information in te `dvc.lock` file. If we run the repro command again, DVC will tell us that nothing changed and so we don't need to run anything.
+
+
+
+
+
+--------------
+
+## Trusted Storage  {#sec-trusted-storage}
+
+*Trusted Storage* refers to the steps needed to keep intellectual control over an AI model.
+This means that you can point to the exact code used to construct each version of the model, as well as the exact training data used, how the data was preprocessed, and the parameters used for each expeirment. 
+The foundation is [Git] as a version control system.
+On top of that we add a storage overlay provided by the [Data Version Control][dvc] (DVC) project.
+DVC provides a way to track file versions in Git, but store the contents elseware, which is useful since training data and models tend to be large files, something Git is not optimized for.
+
+DVC also provides *pipelines* which are essentailly receipies used for each step in a training workflow.
+These are similar in spirit to a *Makefile* as used in software development.
+
+  [git]: https://git-scm.com/
+  [dvc]: https://dvc.org/
+
+## General Workflow Steps
+
+Once a project is set up, the general workflow is:
+
+1. Add or update data files, and download existing data files
+1. Update code, run experiments
+1. Check in changes to both code and data
+
+We will now go through each step in detail.
