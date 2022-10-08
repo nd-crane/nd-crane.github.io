@@ -1,4 +1,50 @@
 ---
-title: "Trusted AI Knowledge Graphs and NLP"
-# bibliography: tai_framework.bib
+title: "Trusted AI - Natural Language Processing and Knowledge Graphs for Naval Systems Intelligence"
+bibliography: tai_kgnlp.bib
+number-sections: true
 ---
+
+## Technical Approach and Justification
+
+### Overview of Approach 
+Identifying the complex causes of potential mission or weapon system failure (or success) and determining effective responses to preventing (or ensuring) such requires leveraging best in class machine learning techniques on rapidly growing, but often poorly structured, data. While the tools available for data science continue to evolve, there remain significant challenges for teams of decision makers trying to wrangle insight from the large and complex data accessible to them. The processes of reviewing, labeling, and classifying massive amounts of information takes extensive time, money, and human power. Fortunately, recent advances in **natural language processing (NLP)** and related machine learning tools such as **knowledge graphs (KG)** can be harnessed to gain insight and answer these critical questions. Growing availability of both open source and commercial NLP tools has made it easier for experimentation but also easier to use machine learning algorithms as “black box” tools in which data is blindly input and tool parameters tweaked to obtain the highest accuracy score. This “black box” approach introduces uncertainty (_untrusted AI_) which could lead to global inefficiencies at best and unexpected miss-classifications at worst. Our framework is being developed with the larger set of Naval Trusted AI projects administered by Crane NSWC, with an overarching focus of effort summarized in [@fig-framework]. It will not rely upon pre-trained “black box” third party inference engines. This requires leveraging a smaller trusted training data set and capitalizing on both KG and NLP contributions to reach acceptable levels of accuracy. Additionally, we include visualizations and robustly explore the parameter tuning space.
+
+![Conceptual Framework Principles for TrustedAI in the AI System Lifecycle](/images/graphic_concept-5.png){#fig-framework}
+
+We propose a **hybrid KG and NLP based solution** for knowledge extraction from large volumes of textual mission/system data given relatively small volumes of labeled training articles (shown in [@fig-kg-nlp]). Preliminary validation of this solution is being performed by ND faculty and students in collaboration with Crane NSWC on multiple large select data sets of particular importance to US Navy missions (where large represents a size impractical for rapid analysis by human readers). The framework and computational workflow are being developed in such a way that military data scientists can select appropriate components such as **support vector machines (SVMs)**, **Recurrent Neural Networks (RNNs)** or **bidirectional encoder representations from transformers (BERT)** to classify a large corpus of text documents given a small quantity of training documents. These tools will be used to investigate automated KG construction and enrichment providing deeper context to NLP tools.
+
+![Overview of Interconnected NLP, Knowledge Engineering System](/images/kg-nlp_graphic_overview.png){#fig-kg-nlp}
+
+This project also includes a major workforce development component. 10 undergraduates will participate in the project for at least one semester each. Students are US citizens and it is expected that multiple students will be ROTC cadets in good standing toward becoming future military officers. Students enhance both their AI and cyber skills through interface with the project scientists and professional software engineers. They: 1) learn and leverage machine learning tools, 2) experience the veracity, volume, variety, velocity and value of big data first hand and 3) learn and demonstrate best practices in software engineering.
+
+## DoD and Naval Relevance
+
+There are an increasing number of federal mandates for national AI focus and effort, we reference just a small subset: 1) Improvement in Cybersecurity and Artificial Intelligence capabilities is repeatedly cited in the United States National Security Strategy (2017) [@NSS-NSC2017] and National Cyber Strategy (2018) [@NCS-NSC2018]. 2) Executive Order 13859 (2019) [@Executive_Office_of_the_President2019-ji] mandates “Maintaining American Leadership in Artificial Intelligence”. 3) The National Security Commision on AI (2021) champions investment in “robust and reliable AI” [@schmidt2021national]. 4) The 2021 US DoD memorandum on “Implementing Responsible Artificial Intelligence in the DoD” [@Hicks2021-aj] directs our AI systems to be ethical and trusted. In recognition of this national priority and the growing foundation of data upon which military cyber operates, the US Navy has developed a framework for naval research and development that includes “Information, Cyber and Spectrum Superiority” as a major focus area of their integrated research portfolio. For the US Navy and broader DoD community to meet these information and cyber research objectives, they must support the professional development of engineers, scientists and technical managers. Our project will help meet that challenge by advancing trusted machine learning knowledge as well as the skill sets of a broader workforce of (US citizen) students.
+
+### ONR Relevance
+Trusted AI students are working with POCs at CRANE to develop trusted AI frameworks leveraging knowledge engineering built on Natural Language Processing and KG tools for insight and decision support relative to Naval weapon systems. This work aligns with the following Chief of Naval Research and ONR priority areas:
+
+- Chief of Naval Research Priority: Decision Superiority, Dominance in the Cognitive Domain 
+- ONR Priority: Machine Learning, Reasoning and Intelligence
+
+### CRANE NSWC Relevance
+Notre Dame and Trusted AI students are aligning their work on specific Naval use cases through NSWC Crane. The team is using Naval data with Naval questions for discovery paths. The team is working directly with NSWC Crane representatives for direct compatibility and transition planning as the research develops. This research aligns with NSWC Crane knowledge priorities as well as direct project needs of multiple groups.
+
+## Naval Partnerships
+The University of Notre Dame has multiple active funded research activities in partnership with Naval Surface Warfare Center Crane. Specifically, the lead PI has bi-weekly meetings with his NSWC Crane TPOCs on the large-scale multiple institution Trusted AI collaboration. Further, the University of Notre Dame partners with NSWC Crane, Indiana University and Purdue University through the DoD supported SCALE (Scalable Asymmetric Lifecycle Engagement) workforce development initiatives focused on microelectronics and machine learning research initiatives. The PIs also work with our colleagues at NSWC Crane, Office of Naval Research and Notre Dame Navy ROTC, to hold naval program and career “workshops” with each year's cohort of students. Chief of Naval Research Rear Adm. Lorin C. Selby was our in person guest speaker during the fall of 2021.
+Specific to this TAI KG+NLP effort, we meet with our Crane NSWC TPOCs Alicia Scott and Eli Phillips at least bi-weekly and have additional deep dive discussions with Crane NSWC data providers and program managers. For our initial research effort we have been provided two naval maintenance log data sets; each with thousands of maintenance log records which include natural language text descriptions of each maintenance event. For both mission relevance and initial prototyping, we have identified three mission related questions that we seek to answer from the data in a trusted and automated manner with suitable accuracy:
+
+::: {.border}
+1. What correlations exist for failures in systems X and systems Y?
+2. Is the failure part listed in the categorical field the same that is identified in the text field?
+What should it be updated to if incorrect?
+3. Is failure X a part of subsystem W and/or system Q?
+:::
+
+## Scientific and Technical Progress
+
+Phase 1 (Y1+3M June 2021 – September 2022) of the project delivered a hybrid KG and NLP based solution for knowledge extraction from large volumes of textual mission/system data given relatively small volumes of labeled training articles (and little to no external [untrusted] training data). Preliminary validation of this solution was performed by ND faculty and students in collaboration with Crane on multiple large maintenance data sets of particular importance to the USN (where large represents a size impractical for rapid analysis by human readers). The data science team evaluated appropriate components such as support vector machines (SVMs), Recurrent Neural Networks (RNNs) and bidirectional encoder representations from transformers (BERT) to classify a large corpus of maintenance logs given a small quantity of training documents. Given the limitations of a smaller trusted training set it was found that the SVMs provided the highest weapon subsystem classification accuracies ranging from 96% to 57% relative to the contextual differences in log event descriptions between the specific weapon subsystems. NN based classifiers leveraged pretrained open source nets such as the Hugging Face BERT NN with modestly lower accuracies than the SVMs. Given the pretrained external nets introduced additional risk (less trust) the SVMs were deemed a valid high trust option.
+
+For further accuracy improvement, the team has shifted to its parallel work in KG creation and is enriching KGs with NLP based context aware tools to enrich KGs for higher accuracy weapon subsystem classification. A summary of the KG enrichment pipeline is shown in [@fig-ie-pipeline].
+
+![NLP Information Extraction Pipeline to Enhance KG Construction](/images/ie_pipeline.png){#fig-ie-pipeline}
