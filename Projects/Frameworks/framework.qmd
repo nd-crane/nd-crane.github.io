@@ -1,5 +1,5 @@
 ---
-title: "Trusted AI Frameworks"
+title: "Trusted AI - Frameworks for Enabling Trusted AI"
 bibliography: tai_framework.bib
 number-sections: true
 ---
