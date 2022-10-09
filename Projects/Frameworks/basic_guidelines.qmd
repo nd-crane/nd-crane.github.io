@@ -1,0 +1,33 @@
+---
+title: "Trusted AI - Basic Guidance for Framework Use"
+bibliography: tai_framework.bib
+number-sections: true
+---
+
+
+## Basic Guidance
+
+- "GitOps" approach for software engineering
+    - Source Control
+    - CI/CD
+    - Testing!
+- Python Centric Software Package Dependency Management
+- Literate programming nbdev, Jupyter (vscode), Integrated Documentation, Automatic generation of python modules and code
+- [Data Centric AI Approach](https://datacentricai.org)
+- Experiment Management - [DVC Experiment Management](https://dvc.org/doc/user-guide/experiment-management)
+- Model Management
+    - [MLFlow](https://mlflow.org)
+    - [DVC](https://dvc.org/doc/use-cases/versioning-data-and-models)
+    - [Hugging Face Model Cards](https://huggingface.co/docs/hub/model-cards)
+    - [Model Evaluation Frameworks and Workflows](https://huggingface.co/blog/zero-shot-eval-on-the-hub)
+- Integration of "Sane Defaults"
+    - [Example](https://github.com/shusheer/apriori-softmax/blob/main/Apriori-Softmax.ipynb)
+- Licenses, Persistent Identifiers, Machine Readable Povenance, Vocabularies
+        - [OpenRAIL License](https://huggingface.co/blog/open_rail)
+        - [DOI for Datasets and Models](https://huggingface.co/blog/introducing-doi)
+        - [Hugging Face Model Cards](https://huggingface.co/docs/hub/model-cards)
+- AI Policy
+    - [Huggingface AI Policy Interim Report](https://huggingface.co/blog/us-national-ai-research-resource)
+- Threat Modeling [Securing the Future of Artificial Intelligence and Machine Learning at Microsoft](https://learn.microsoft.com/en-us/security/engineering/securing-artificial-intelligence-machine-learning)
+    - [Microsoft Failure Modes in Machine Learning](https://learn.microsoft.com/en-us/security/engineering/failure-modes-in-machine-learning)
+    - [Threat Modeling AI/ML Systems and Dependencies](https://learn.microsoft.com/en-us/security/engineering/threat-modeling-aiml)
