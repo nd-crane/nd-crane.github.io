@@ -8,6 +8,7 @@ website:
             contents:
               - Projects/Frameworks/framework.qmd
               - Projects/Frameworks/tutorial.qmd
+              - Projects/Frameworks/basic_guidelines.qmd
           - section: Knowledge Graphs and NLP
             contents:
               - Projects/KG_NLP/kg_nlp.qmd
