@@ -9,12 +9,12 @@ bibliography: tai_framework.bib
 This tutorial will guide you with setting up the framework and running a simple model.
 Begin by installing Git (see @sec-installing-git) and if needed installing Python (@sec-installing-python).
 Using the command line, type the following to create a new directory for the new project:
+(Don't type the `$` character—it is used to mark the commands typed into the terminal,)
 
-    mkdir ai-tutorial
+    $ mkdir ai-tutorial
 
 We will now go into the new directory and initialize PDM.
 First, tell PDM to use the PEP 582 method of storing dependencies.
-(Don't type the `$` character—it is used to mark the commands typed into the terminal,)
 
     $ cd ai-tutorial
     $ pdm config --local python.use_venv False
@@ -29,7 +29,7 @@ And now have PDM generate an initital manifest.
     2. /opt/homebrew/opt/python@3.9/bin/python3.9 (3.9)
     3. /Users/dbrower/.pyenv/versions/3.9.10/bin/python3.9 (3.9)
     4. /Library/Developer/CommandLineTools/usr/bin/python3 (3.9)
-    Please select (0): 0
+    Please select (0):
     Using Python interpreter: /opt/homebrew/opt/python@3.10/bin/python3.10 (3.10)
     Would you like to create a virtualenv with /opt/homebrew/opt/python@3.10/bin/python3.10? [y/n] (y): y
     Virtualenv is created successfully at ./ai-tutorial/.venv
@@ -58,18 +58,19 @@ Lets create a new git repository for this model.
      1 file changed, 14 insertions(+)
      create mode 100644 .pdm.toml
      create mode 100644 pyproject.toml
-    ```
+
+## Adding the model
 
 Now lets create a machine learning model.
 For this tutorial, we will use the PyTorch [beginner quickstart project](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html).
 
 Download the quickstart source code from GitHub:
 
-    curl https://raw.githubusercontent.com/pytorch/tutorials/master/beginner_source/basics/quickstart_tutorial.py > quickstart_tutorial.py
+    $ curl https://raw.githubusercontent.com/pytorch/tutorials/master/beginner_source/basics/quickstart_tutorial.py > quickstart_tutorial.py
 
 This code uses some external Python models, so we need to tell PDM to fetch them:
 
-    pdm add torch torchvision
+    $ pdm add torch torchvision
 
 Now add DVC.
 
@@ -78,42 +79,46 @@ Now add DVC.
 
 Lets commit our changes to the local Git repository
 
-    $ git add .dvc .dvcignore quickstart_tutorial.py
+    $ git add .dvc .dvcignore pyproject.toml quickstart_tutorial.py
     $ git commit -m "Adding DVC and model code"
 
-And now lets run the model.
-The first part of the model will download the training data.
-It will then run 5 epochs of the training cycle.
+And now run the model.
+The code will download the training data first, and then run 5 training epochs.
 
-    pdm run python quickstart_tutorial
+    $ pdm run python quickstart_tutorial
 
+## DVC
 
+The first place to start using DVC is to wrap the execution of the model with DVC, allowing DVC to track specified
+dependencies, parameters and outputs.
+
+We want to include all the files that affect the computation of the output.
+A good first choice is the the Python file itself.
+More subtle choices are the `pyproject.toml` and `pdm.lock` since those control the pacakges used by the source code.
+
+    $ dvc stage add -n tutorial -d quickstart_tutorial.py -d pyproject.toml -d pdm.lock python quickstart_tutorial.py
+
+This declares a pipeline stage named "tutorial" that executes the command `python quickstart_tutorial.py` and depends on three files.
+
+Declaring this stage lets us (and others) reproduce the results by running `dvc repro`.
+Since DVC is tracking the commands and the command line options, it is easier to share computation pipelines with others,
+and we don't need to remember all the steps required to process the data.
+For more complicated workflows we can make additional stages for downloading and pre-processing the data, as well as additional training steps if needed.
+
+Additionally, DVC tracks which files we may have changed, and will only rerun the stages that depend on the changed files.
+If we run the `dvc repro` command again and nothing has changed, DVC will tell us that nothing changed and doesn't execute anything.
+This is identical to how `Makefiles` in software engineering work.
+
+DVC stores the pipeline information in the `dvc.lock` file.
+
+Add another step on downloading the data?
 
 
 # Parking
 
-## james example
+## PDM Installiation info
 
 PDM should be installed as described in the [Installation instructions](https://pdm.fming.dev/latest/#recommended-installation-method).
-
-## Data Version Control (DVC)
-
-### Program Execution
-
-The first place to start using DVC is to wrap the execution of the model with DVC, allowing dvc to track specified dependencies, parameters and outputs. 
-
-At the moment, our primary dependency is the python file itself, and we should also include the pyproject.toml and pdm.lock files as our results might change if we change something about our dependencies.
-
-```bash
-pdm run dvc stage add -n tutorial -d quickstart_tutorial.py -d pyproject.toml -d pdm.lock python quickstart_tutorial.py
-```
-
-### Reproducing Results
-
-DVC allows us to reproduce the results by running `pdm run dvc repro`. This will execute the code and track the information we have told DVC to track. It stores this information in te `dvc.lock` file. If we run the repro command again, DVC will tell us that nothing changed and so we don't need to run anything.
-
-
-
 
 
 --------------
