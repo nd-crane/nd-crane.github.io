@@ -7,6 +7,7 @@ website:
           - section: Frameworks
             contents:
               - Projects/Frameworks/framework.qmd
+              - Projects/Frameworks/components.qmd
               - Projects/Frameworks/tutorial.qmd
               - Projects/Frameworks/basic_guidelines.qmd
           - section: Knowledge Graphs and NLP
