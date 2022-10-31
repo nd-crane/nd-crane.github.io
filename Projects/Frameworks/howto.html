@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.253">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Notre Dame - Crane TrustedAI - Framework How To</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Notre Dame - Crane TrustedAI - Framework How To">
+<meta property="og:description" content="This page contains receipies on how to do tasks with the framework.">
+<meta property="og:site-name" content="Notre Dame - Crane TrustedAI">
+<meta name="twitter:title" content="Notre Dame - Crane TrustedAI - Framework How To">
+<meta name="twitter:description" content="This page contains receipies on how to do tasks with the framework.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Notre Dame - Crane TrustedAI</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/nd-crane/"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Framework How To</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Trusted AI</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Projects</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Frameworks</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks/framework.html" class="sidebar-item-text sidebar-link">Trusted AI - Frameworks for Enabling Trusted AI</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks/components.html" class="sidebar-item-text sidebar-link">Framework Components</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks/tutorial.html" class="sidebar-item-text sidebar-link">Trusted AI Framework Tutorial</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks/basic_guidelines.html" class="sidebar-item-text sidebar-link">Trusted AI - Basic Guidance for Framework Use</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Knowledge Graphs and NLP</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/KG_NLP/kg_nlp.html" class="sidebar-item-text sidebar-link">Trusted AI - Natural Language Processing and Knowledge Graphs for Naval Systems Intelligence</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#framework-how-to" id="toc-framework-how-to" class="nav-link active" data-scroll-target="#framework-how-to">Framework How To</a>
+  <ul class="collapse">
+  <li><a href="#installation-and-set-up" id="toc-installation-and-set-up" class="nav-link" data-scroll-target="#installation-and-set-up">Installation and Set Up</a>
+  <ul class="collapse">
+  <li><a href="#getting-an-expsiting-repository" id="toc-getting-an-expsiting-repository" class="nav-link" data-scroll-target="#getting-an-expsiting-repository">Getting an expsiting repository</a></li>
+  <li><a href="#making-a-new-repository" id="toc-making-a-new-repository" class="nav-link" data-scroll-target="#making-a-new-repository">Making a new repository</a></li>
+  <li><a href="#pdm" id="toc-pdm" class="nav-link" data-scroll-target="#pdm">PDM</a></li>
+  <li><a href="#install-dvc" id="toc-install-dvc" class="nav-link" data-scroll-target="#install-dvc">Install DVC</a></li>
+  </ul></li>
+  <li><a href="#common-tasks" id="toc-common-tasks" class="nav-link" data-scroll-target="#common-tasks">Common Tasks</a>
+  <ul class="collapse">
+  <li><a href="#download-a-dataset" id="toc-download-a-dataset" class="nav-link" data-scroll-target="#download-a-dataset">Download a dataset</a></li>
+  <li><a href="#add-or-update-a-dataset" id="toc-add-or-update-a-dataset" class="nav-link" data-scroll-target="#add-or-update-a-dataset">Add or Update a dataset</a></li>
+  <li><a href="#create-a-workflow" id="toc-create-a-workflow" class="nav-link" data-scroll-target="#create-a-workflow">Create a Workflow</a></li>
+  </ul></li>
+  <li><a href="#trusted-process" id="toc-trusted-process" class="nav-link" data-scroll-target="#trusted-process">Trusted Process</a></li>
+  <li><a href="#how-tos" id="toc-how-tos" class="nav-link" data-scroll-target="#how-tos">How-Tos</a>
+  <ul class="collapse">
+  <li><a href="#sec-instaling-python" id="toc-sec-instaling-python" class="nav-link" data-scroll-target="#sec-instaling-python">Instaling Python</a></li>
+  <li><a href="#sec-instaling-git" id="toc-sec-instaling-git" class="nav-link" data-scroll-target="#sec-instaling-git">Instaling Git</a></li>
+  <li><a href="#sec-installing-pdm" id="toc-sec-installing-pdm" class="nav-link" data-scroll-target="#sec-installing-pdm">Installing PDM</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/nd-crane/nd-crane.github.io/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Framework How To</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="framework-how-to" class="level1">
+<h1>Framework How To</h1>
+<p>This page contains receipies on how to do tasks with the framework.</p>
+<section id="installation-and-set-up" class="level2">
+<h2 class="anchored" data-anchor-id="installation-and-set-up">Installation and Set Up</h2>
+<p>The framework requires <a href="https://www.python.org/">Python</a> to operate. See the section <strong>?@sec-instaling</strong>=python if you don’t have a recent version of python installed. All projects are expected to be in a Git repository. Make sure [Git] is installed by typing <code>git</code> and (see section <a href="#sec-instaling-git">Section&nbsp;1.4.2</a>)</p>
+<p>If you have expierence with Git, feel free to skip to the section <strong>?@sec-trusted-storage</strong>.</p>
+<p>There are also many guides online if you want more information, especially on <a href="https://github.com/git-guides">using Git</a>.</p>
+<section id="getting-an-expsiting-repository" class="level3">
+<h3 class="anchored" data-anchor-id="getting-an-expsiting-repository">Getting an expsiting repository</h3>
+<p>Each project needs to live in a Git repository. If there is already a git repository set up, you can <em>clone</em> it to make a local copy on your computer. The exact details depend on where the repository is hosted, but the command will have the form</p>
+<pre><code>git clone https://github.com/nd-crane/moo.git</code></pre>
+<p>Where the <code>git clone</code> is the command the the URL will be the repository you want to make a local copy of.</p>
+</section>
+<section id="making-a-new-repository" class="level3">
+<h3 class="anchored" data-anchor-id="making-a-new-repository">Making a new repository</h3>
+<p>If there isn’t a repository set up already one set up, make a new one by creating a new directory, and then using <code>git init</code> to initialize a new git repository. The command line steps are:</p>
+<pre><code>mkdir my-ai-project
+cd my-ai-project
+git init</code></pre>
+<p>Once you do this, you can then add some files and make the first commit. A good first file is the <code>README</code> file which should give a description of what this repository is. for each file or directory in your project, run <code>git add</code> for it to tell Git you want to track changes to that file.</p>
+<pre><code>[edit README file]
+git add README
+git commit -m "Initial Commit"</code></pre>
+</section>
+<section id="pdm" class="level3">
+<h3 class="anchored" data-anchor-id="pdm">PDM</h3>
+<p>This documentation assumes you are using <a href="https://pdm.fming.dev/latest/">PDM</a> as a package maanger.</p>
+</section>
+<section id="install-dvc" class="level3">
+<h3 class="anchored" data-anchor-id="install-dvc">Install DVC</h3>
+<p>Since the <a href="https://pdm.fming.dev/latest/">PDM</a> pacakge manager is installed, we can use that to install DVC:</p>
+<pre><code>$ pdm add dvc
+Adding packages to default dependencies: dvc
+🔒 Lock successful
+Changes are written to pdm.lock.
+Changes are written to pyproject.toml.
+Synchronizing working set with lock file: 85 to add, 0 to update, 0 to remove
+
+🎉 All complete!</code></pre>
+<p>Configure DVC with remotes.</p>
+</section>
+</section>
+<section id="common-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="common-tasks">Common Tasks</h2>
+<section id="download-a-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="download-a-dataset">Download a dataset</h3>
+</section>
+<section id="add-or-update-a-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="add-or-update-a-dataset">Add or Update a dataset</h3>
+</section>
+<section id="create-a-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-workflow">Create a Workflow</h3>
+</section>
+</section>
+<section id="trusted-process" class="level2">
+<h2 class="anchored" data-anchor-id="trusted-process">Trusted Process</h2>
+<p>DVC provides <em>pipelines</em> which are receipies used for each step in a training workflow. These are similar in spirit to a <em>Makefile</em> as used in software development. Pipelines let us record the exact sequence of commands as well as the command-line options used, for a training sequence. They also help new people get up to speed quickly on training and testing models.</p>
+</section>
+<section id="how-tos" class="level2">
+<h2 class="anchored" data-anchor-id="how-tos">How-Tos</h2>
+<p>This section contains more detailed descriptions for topics that need them.</p>
+<section id="sec-instaling-python" class="level3">
+<h3 class="anchored" data-anchor-id="sec-instaling-python">Instaling Python</h3>
+<p>The framework is implimented in python, and you need version 3.9 or greater. To find the version of python you have installed run <code>python3 -V</code>.</p>
+<p>The steps needed to install Python depends on the operating system.</p>
+<p><em>All this is placeholder. Perhaps there is an online tutorial elsewhere to explain this better?</em></p>
+<ul>
+<li><p><strong>MacOS</strong> Easiest way is with <a href="https://brew.sh/">Homebrew</a>.</p>
+<pre><code>$ brew install pyenv
+$ pyenv install 3.10.6</code></pre></li>
+<li><p><strong>Linux</strong>…how?</p></li>
+<li><p><strong>Windows</strong>…no idea</p></li>
+</ul>
+</section>
+<section id="sec-instaling-git" class="level3">
+<h3 class="anchored" data-anchor-id="sec-instaling-git">Instaling Git</h3>
+<p>fill in.</p>
+</section>
+<section id="sec-installing-pdm" class="level3">
+<h3 class="anchored" data-anchor-id="sec-installing-pdm">Installing PDM</h3>
+<p>fill in.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
