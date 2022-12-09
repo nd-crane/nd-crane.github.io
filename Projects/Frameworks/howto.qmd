@@ -5,46 +5,62 @@ bibliography: tai_framework.bib
 
 # Framework How To
 
-This page contains receipies on how to do tasks with the framework.
+This page contains receipies on how to accomplish tasks using the framework.
 
 ## Installation and Set Up
 
-The framework requires [Python] to operate.
-See the section @sec-instaling=python if you don't have a recent version of python installed.
-All projects are expected to be in a Git repository.
-Make sure [Git] is installed by typing `git` and (see section @sec-instaling-git)
+The framework requires [Git] and [Python] to be installed.
+See the section @sec-instaling-python if you don't have a recent version of python installed.
+All projects are expected to be in a Git repository (see section @sec-instaling-git).
 
-If you have expierence with Git, feel free to skip to the section @sec-trusted-storage.
+### Git
 
-There are also many guides online if you want more information, especially on [using Git][github-git].
+This section gives some basic commands for using the Git source code control system.
+If you have expierence with Git, feel free to skip to the next section, @sec-trusted-storage.
+For more detailed information there are many guides online, for example GitHub's guide to [using Git][github-git].
 
-### Getting an expsiting repository
+#### Connecting to an existing repository
 
-Each project needs to live in a Git repository.
-If there is already a git repository set up, you can *clone* it to make a local copy on your computer.
-The exact details depend on where the repository is hosted, but the command will have the form
+Every project should live in a Git repository not only track changes but also to provide a provenance record of
+for all created machine learning models.
+If someone else has already created a git repository for the project, you will need to *clone* it to your local computer.
+The clone is essentially a local copy of the repository.
+The clone command will look similar to the following:
 
     git clone https://github.com/nd-crane/moo.git
 
-Where the `git clone` is the command the the URL will be the repository you want to make a local copy of.
+The URL will change to point to the repository you want to make a copy of.
+Most projects will host their repository on a site, such as GitHub, GitLab, or BitBucket.
+
+The `clone` command will make a subdirectory with the name of the repositry,
+make a copy of the complete repository contents and then
+update the directory with the most current version of the main branch (usually called `main`).
+The URL you enter is called the `origin` and it is saved to make it easy to copy your changes back to it.
+
 
 ### Making a new repository
 
-If there isn't a repository set up already one set up, make a new one by creating a new directory,
-and then using `git init` to initialize a new git repository.
+If a repository has not already been set up, it is easy to make a new one.
+Create a new directory,
+and initialize the new git repository using `git init`.
 The command line steps are:
 
     mkdir my-ai-project
     cd my-ai-project
     git init
 
-Once you do this, you can then add some files and make the first commit.
-A good first file is the `README` file which should give a description of what this repository is.
+Once this is done, you can then add some files and make the first commit.
+Usually people just start with a `README` file for the first commit, but you can add as many files as you would like.
+The `README` file which should give a description of what this repository is, and maybe contact information and contribution guidelines.
 for each file or directory in your project, run `git add` for it to tell Git you want to track changes to that file.
 
     [edit README file]
     git add README
     git commit -m "Initial Commit"
+
+<!-- Other good practices for git repositories (including private repositories) are to include a LICENSE file, -->
+
+
 
 ### PDM
 
@@ -69,7 +85,7 @@ Synchronizing working set with lock file: 85 to add, 0 to update, 0 to remove
 🎉 All complete!
 ```
 
-Configure DVC with remotes.
+Now, configure DVC with remotes.
 
 [python]: https://www.python.org/
 [pyenv]: https://github.com/pyenv/pyenv
@@ -78,6 +94,131 @@ Configure DVC with remotes.
 [github-git]: https://github.com/git-guides
 
 ## Common Tasks
+
+### Set Up a DVC Storage
+
+When you set up DVC for a local repository, DVC will create a local cache to store actively used data for that repository.
+To make DVC more useful, you will want to set up a _DVC remote_ for sharing data between computers and people.
+A project can use more than one remote, allowing for splitting files up based on file type, file permissions, or other critera.
+For some special cases, such as dealing with _extremely_ large files or publishing read-only directories of data to a wide
+audience, DVC also has other ways of sharing files.
+
+
+#### Set up local DVC to use a remote
+
+Configure your DVC client to use a remote by adding the address of the remote:
+
+    dvc remote add images s3://ourbucket/image-files
+    git add .dvc/config
+    git commit -m "Configure remote storage"
+
+This will adds a remote named `images` that points to the path "/image-files" in the S3 bucket `outbucket`.
+DVC supports many kinds of remotes; in addition to S3, it can also connect to Azure Blob Storage, Google Drive,
+NAS file paths, and HDFS.
+Since DVC is an overlay on top of git, the last two commands updates our git repo to store the new configuration.
+
+You have the option to make a remote the default one.
+To do this, use a `-d` option in the `dvc remote add` command:
+
+    dvc remote add -d images s3://ourbucket/image-files
+
+The default remote is the one that is used to store new files that you might add and need to share in the future.
+
+The second two `git` commands are used to store this configureation into your git repository.
+This means the remote information is shared with others using this git repository, so make sure passwords or other
+sensitive information is not encoded in the remote address.
+
+If passwords cannot be in the remote address, how are they handled?
+The usual way is to use a local envrionment variable or your SSH private key that is stored outside of the repository.
+The exact method depends on the type of remote storage being used.
+
+
+#### Set up storage for a new DVC remote
+
+A DVC remote is just a shared location where DVC can read and store files.
+This location may be a directory on a shared filesystem, or a blob storage system.
+DVC supports many types of endpoints, see [the documentation](https://dvc.org/doc/command-reference/remote/add#supported-storage-types).
+To set up a DVC remote for initially, create the remote location on the on the shared endpoint somehow:
+perhaps by creating a directory on a shared drive, or by creating a bucket on a blob storage system.
+Then configure the sharing settings on the endpoint approprately.
+Once this is created, you can add the remote to your local DVC client by following the section above.
+
+For the curious, DVC will store files on the remote in a two level heirarchy using content-addressing.
+The files will have a structure and names similar to the following tree:
+
+    ├── 02
+    │   └── dcd569f550bb10d67cc2f557003ac1
+    ├── 08
+    │   └── d7f4f8169562a01bc227635422bceb
+    └── 11
+        └── 30d688e008e4e8344316f758e9a50c
+
+Since the file contents are stored under the hash value of the content,
+different versions of a file will get different hashes and be stored under different names.
+This is what allows DVC to track file versions and store everything together easily.
+For more details see the DVC documentation on the [structure of the cache directory](https://dvc.org/doc/user-guide/project-structure/internal-files#structure-of-the-cache-directory)).
+
+
+#### DVC pull workflow
+
+DVC acts as an overlay on the git repository, which means DVC uses git to track the file metadata (like when did
+a file change and by who), while storing the actual file contents in the DVC remote.
+Thus it is a two step process to fully update your local files.
+First, update your local directory with Git, and then update the files with DVC.
+For example:
+
+    git pull
+    dvc checkout
+
+Or, when changing branches:
+
+    git checkout working-branch
+    dvc checkout
+
+The Git step updates the local files controlled by Git, and the DVC step synchronizes the data files tracked by DVC.
+
+
+#### DVC push workflow
+
+Adding and updating files tracked by DVC is a two step process since we need to get the new data into the DVC remote
+and we need to track the new metadata in Git.
+
+    dvc add
+    git commit
+    dvc push
+
+dvc checkout to sync working directory to .dvc files
+
+
+#### Other kinds of DVC storage
+
+The majority of DVC usage will involve the local cache storage and DVC remotes.
+However, there are situations where neither quite works as needed.
+These situations usually involve datasets that are _extremely_ large, either too large to store in a local cache or
+too large to fully download.
+This section mentions these alternative methods DVC has just for completness.
+
+* The _remote_ or _remote storage_ is the common way of sharing data. It is an external location
+on either a shared drive, or cloud storage, among several other options.
+
+* A _shared cache_ or _external cache_ is a special kind of cache. Every DVC install uses a local cache to store files
+being used. A shared cache is a cache (usually on a shared file system) used by more than one project or user.
+[dvc-shared-cache], [dvc-external-cache].
+
+* An _external output_ or _external dependency_ is a way of marking a file as coming from an external source and tracking updates from the external location.
+
+* A _data_ or _model registry_ is a separate Git repository that contains file metadata for files stored in one or more separate DVC remotes.
+It is used to let other DVC users to share remote storage configuration information and files.
+The `dvc import` and `dvc get` commands are used to access these registries.
+[dvc-data-registry]
+
+
+[dvc-shared-cache]:     https://dvc.org/doc/user-guide/how-to/share-a-dvc-cache
+[dvc-external-cache]:   https://dvc.org/doc/user-guide/data-management/managing-external-data#setting-up-an-external-cache
+[dvc-remote]:           https://dvc.org/doc/command-reference/remote
+[dvc-data-registry]:    https://dvc.org/doc/use-cases/data-registry/tutorial
+[dvc-external-data]:    https://dvc.org/doc/user-guide/data-management/managing-external-data
+
 
 ### Download a dataset
 
