@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Notre Dame - Crane TrustedAI - Trusted AI - Frameworks for Enabling Trusted AI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../Projects/Frameworks_Infrastructure_Development/components.html" rel="next">
+<link href="../../Projects/Frameworks_Infrastructure_Development/frameworks_infrastructure_development.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Notre Dame - Crane TrustedAI - Trusted AI - Frameworks for Enabling Trusted AI">
+<meta property="og:description" content="Research on the development of TrustedAI">
+<meta property="og:site_name" content="Notre Dame - Crane TrustedAI">
+<meta name="twitter:title" content="Notre Dame - Crane TrustedAI - Trusted AI - Frameworks for Enabling Trusted AI">
+<meta name="twitter:description" content="Research on the development of TrustedAI">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Notre Dame - Crane TrustedAI</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/nd-crane/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Projects</li><li class="breadcrumb-item"><a href="../../Projects/Frameworks_Infrastructure_Development/frameworks_infrastructure_development.html">Framework Infrastructure Development</a></li><li class="breadcrumb-item"><a href="../../Projects/Frameworks_Infrastructure_Development/framework.html">Trusted AI - Frameworks for Enabling Trusted AI</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Projects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Human-machine Pairing for Trustworthy AI</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Human-machine_Pairing/human_machine_pairing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI - Human Machine Paring</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Trust and Verifiability in AI</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Trust_and_Verifiability/trust_and_verifiability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI - Trust and Verifiability</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Statistical Analysis and Measurement of Neural Networks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Statistical_Analysis_and_Measurement/statistical_analysis_and_measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI - Statistical Analysis and Measurement</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Knowledge Representation and Engineering</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Knowledge_Representation_and_Engineering/knowledge_representation_and_engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI - Knowledge Representation and Engineering</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Knowledge_Representation_and_Engineering/kg_nlp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI - Natural Language Processing and Knowledge Graphs for Naval Systems Intelligence</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Framework Infrastructure Development</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks_Infrastructure_Development/frameworks_infrastructure_development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI - Frameworks Infrastructure Development</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks_Infrastructure_Development/framework.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Trusted AI - Frameworks for Enabling Trusted AI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks_Infrastructure_Development/components.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Framework Components</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks_Infrastructure_Development/tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI Framework Tutorial</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../Projects/Frameworks_Infrastructure_Development/basic_guidelines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trusted AI - Basic Guidance for Framework Use</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#united-states-department-of-defense-and-trusted-ai-frameworks" id="toc-united-states-department-of-defense-and-trusted-ai-frameworks" class="nav-link" data-scroll-target="#united-states-department-of-defense-and-trusted-ai-frameworks"><span class="header-section-number">2</span> United States Department of Defense and Trusted AI Frameworks</a>
+  <ul class="collapse">
+  <li><a href="#informing-dod-acquisition-of-ai-technologies" id="toc-informing-dod-acquisition-of-ai-technologies" class="nav-link" data-scroll-target="#informing-dod-acquisition-of-ai-technologies"><span class="header-section-number">2.1</span> Informing DoD Acquisition of AI Technologies</a></li>
+  </ul></li>
+  <li><a href="#leveraging-ai-community-tools" id="toc-leveraging-ai-community-tools" class="nav-link" data-scroll-target="#leveraging-ai-community-tools"><span class="header-section-number">3</span> Leveraging AI Community Tools</a></li>
+  <li><a href="#tai-projects-as-framework-testbeds" id="toc-tai-projects-as-framework-testbeds" class="nav-link" data-scroll-target="#tai-projects-as-framework-testbeds"><span class="header-section-number">4</span> TAI Projects as Framework Testbeds</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nd-crane/nd-crane.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Projects</li><li class="breadcrumb-item"><a href="../../Projects/Frameworks_Infrastructure_Development/frameworks_infrastructure_development.html">Framework Infrastructure Development</a></li><li class="breadcrumb-item"><a href="../../Projects/Frameworks_Infrastructure_Development/framework.html">Trusted AI - Frameworks for Enabling Trusted AI</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Trusted AI - Frameworks for Enabling Trusted AI</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>One of the motivations behind the TrustedAI research consortium is to translate cutting edge Artificial Intelligence (AI) and Machine Learning research into <strong>conceptual frameworks</strong> and <strong>concrete tools</strong> to facilitate the <strong>trusted</strong> adoption of AI based technologies by the United States Department of Defense using the United States Navy as a concrete test case. The <strong>Frameworks Project</strong> was intended to be a conduit for integrating both a set of <strong>conceptual best practices</strong> for use when developing, evaluating and deploying AI technologies, and a <strong>set of software tools</strong> that enable the conceptual frameworks. To facilitate adoption of both “frameworks”, the project looked to successful software engineering tools and principles such as <a href="https://resources.github.com/ci-cd/">Continuous Integration/Continuous Delivery (CI/CD)</a> tools that widely adopt software version control systems such as <a href="https://git-scm.com/">git</a> as well as software repositories like <a href="https://github.com">GitHub</a>. This <a href="https://about.gitlab.com/topics/gitops/">“GitOps”</a> approach is being increasingly adopted in private sector software projects and facilitates team based software development, automated testing and deployment, and issue tracking, collaboration and compliance. Given that AI software is currently implemented in classical “Software 1.0” written in languages like Python, C++, etc, starting with trusted engineering of the traditional software stack is foundational to the practice of TrustedAI. We also recognize that there is a “AI software” lifecycle akin to the CI/CD lifecycle in traditional software engineering that correspond to the “outer ring” in <a href="#fig-framework" class="quarto-xref">Figure&nbsp;1</a> that is <strong>Development</strong> of AI software, <strong>Use</strong> of that software in real world deployments, <strong>Analysis</strong> of the AI software performance i.e.&nbsp;—Trustworthiness—, and <strong>Re-design</strong> or Re-training of AI to better meet the underlying system requirements. The GitOps approach also has the advantage of facilitate the tracking of provenance information that, at the most general level, Trustworthy AI should have the attributes of being <strong>lawful</strong>, <strong>ethical</strong> and <strong>robust</strong> throughout the AI System Lifecycle <span class="citation" data-cites="Smuha_undated-da">(<a href="#ref-Smuha_undated-da" role="doc-biblioref">Smuha, n.d.</a>)</span>.</p>
+<div id="fig-framework" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../images/graphic_concept-5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Conceptual Framework Principles for TrustedAI in the AI System Lifecycle
+</figcaption>
+</figure>
+</div>
+<p>However, AI software is yet fundamentally different from traditional software implementations because the <em>software behaviors</em> are <em>learned</em> behaviors, not behavior encoded by a programmer in the program through some algorithm. This new type of software has been termed <a href="https://karpathy.medium.com/software-2-0-a64152b37c35">“Software 2.0”</a> by some of the AI community and is based on the observation that the programming paradigm is being fundamentally altered from implementation of algorithms in the form of code to labeling, curating and engineering data that will be used to <strong>define</strong> software behavior that integrates into a <strong>Chain of Trust</strong> <span class="citation" data-cites="Toreini2020-fj">(<a href="#ref-Toreini2020-fj" role="doc-biblioref">Toreini et al. 2020</a>)</span> along the ML Pipeline. This observation of the critical nature of training data in the AI based software development process has lead the <a href="https://datacentricai.org">“Data-centric”</a> AI discipline that aims to create principles and best practices behind systematically engineering data used to construct AI software. Data-centric AI also reflects the United States Department of Defense Data Strategy <span class="citation" data-cites="USDOD2020-lk">(<a href="#ref-USDOD2020-lk" role="doc-biblioref"><span>“<span>DoD</span> Data Strategy: Unleashing Data to Advance the National Defense Strategy”</span> 2020</a>)</span> where data should have the goals of being <strong>Visible</strong>, <strong>Accessible</strong>, <strong>Understandable</strong>, <strong>Linked</strong>, <strong>Trustworthy</strong>, <strong>Interoperable</strong>, and <strong>Secure</strong> as illustrated in <a href="#fig-DOD-data" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<p>The Data-centric AI principles form the second foundational pillar for the frameworks in exploring and adopting tools that facilitate this “data and knowledge engineering process” through <strong>Data Collection</strong>, <strong>Data Preparation</strong> and <strong>Feature Extraction</strong>. We believe that Data-centric AI can benifit from <strong>knowledge enginnering</strong>, where a “formal” conceptual layer that encodes a specification of the human conceptualization with respect to the data is used to give AI deeper context of data meaning <span class="citation" data-cites="Ilievski2021-eb">(<a href="#ref-Ilievski2021-eb" role="doc-biblioref">Ilievski et al. 2021</a>)</span>. At each stage of the ML Pipeline each of the <strong>Six Dimensions of Trust</strong> as identified by <span class="citation" data-cites="Liu2022-ie">(<a href="#ref-Liu2022-ie" role="doc-biblioref">Liu et al. 2022</a>)</span> can be applied. In other words, each step of the ML Pipeline should be engineered with respect to <strong>Explainability</strong>, <strong>Safety &amp; Robustness</strong>, <strong>Non-discrimination &amp; Fairness</strong>, <strong>Accountability and Auditability</strong>, <strong>Environmental Well-being</strong> and <strong>Privacy</strong>.</p>
+<div class="border">
+<p><strong>The goal</strong> of the Framework tools is to integrate existing software engineering tools and best practices as well as <em>Trusted AI Project outputs</em> with respect to each of these six dimension’s of trust that can be used at each <em>stage</em> of the ML Pipeline to create a <strong>“Toolbox”</strong> for practitioners and evaluators to utilize in enabling each of the dimensions in a modular set of software frameworks. This Framework Infrastructure connects the various components and toolboxes being developed for the Trusted AI project together into a single coherent system. The system provides standardized methods for storage and version control of code, data and documentation. There is a minimum viable vocabulary to describe experiments, as well as metadata and storage criterion for model/data outputs such as Neural Network weights. Preference is given to Open Source Software and Tools that can either be integrated into the Framework or modified by our software development teams with possible contribution back to their parent project.</p>
+</div>
+</section>
+<section id="united-states-department-of-defense-and-trusted-ai-frameworks" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="united-states-department-of-defense-and-trusted-ai-frameworks"><span class="header-section-number">2</span> United States Department of Defense and Trusted AI Frameworks</h2>
+<p>Part of the Trusted AI Frameworks mission is to help <em>operationalize</em> the DOD vision with respect to “Implimenting Responsible Artificial Intelligence in the Department of Defense” <span class="citation" data-cites="Hicks2021-aj">(<a href="#ref-Hicks2021-aj" role="doc-biblioref">Hicks 2021</a>)</span> that outlines the core <em>Ethical</em> principles that goveren the “…design, development, deployment, and use of Al capabilities” for the DoD. These core ethical principles demand that AI be <strong>Responsible</strong>, <strong>Equitable</strong>, <strong>Traceable</strong>, <strong>Reliable</strong> and <strong>Governable</strong> <span class="citation" data-cites="JAIC-Ethical-xu">(<a href="#ref-JAIC-Ethical-xu" role="doc-biblioref">Joint Center for Artificial Intelligence 2020</a>)</span>. According the guidelines, the foundational tenets for any Responsible AI (RAI) implimentenation <strong>will</strong> include <strong>RAI Governance</strong>, <strong>Warfighter Trust</strong>, <strong>AI Product and Acquisition Lifecycle</strong>, <strong>Requirements Validation</strong>, <strong>Responsible AI Ecosystem</strong>, and <strong>AI Workforce</strong>. These RAI tenets map to elements of the Conceptual Framework Principles for TrustedAI in the AI System Lifecycle in <a href="#fig-framework" class="quarto-xref">Figure&nbsp;1</a>, particularly in establishing Warfighter Trust and informing the AI Product and Acquisition Lifecycle best practices. The RAI guidelines deeply inform both the TrustedAI project as a whole and the TrustedAI Frameworks project particularly in building tools and educating the <em>AI Workforce</em> in both the core ethical principles and RAI tenets. A Data-centric approach is critical implimenting the RAI tenets is forms the core of the Trusted AI Framworks centering on the DoD Data Strategy as both a principle for “long-term data competency grounded in high-quality training datasets” <span class="citation" data-cites="USDOD2020-lk">(<a href="#ref-USDOD2020-lk" role="doc-biblioref"><span>“<span>DoD</span> Data Strategy: Unleashing Data to Advance the National Defense Strategy”</span> 2020</a>)</span>, but also to structure provenance information relative to the AI lifecycle and its connection to RAI. This data strategy is represented in <a href="#fig-DOD-data" class="quarto-xref">Figure&nbsp;2</a> and is a core compentency the TrustedAI set of Frameworks will help to enable.</p>
+<div id="fig-DOD-data" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-DOD-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../../images/dod_data_strategy.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-DOD-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: DoD Data Strategy Framework from <span class="citation" data-cites="USDOD2020-lk"><span>“<span>DoD</span> Data Strategy: Unleashing Data to Advance the National Defense Strategy”</span> (<a href="#ref-USDOD2020-lk" role="doc-biblioref">2020</a>)</span>
+</figcaption>
+</figure>
+</div>
+<section id="informing-dod-acquisition-of-ai-technologies" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="informing-dod-acquisition-of-ai-technologies"><span class="header-section-number">2.1</span> Informing DoD Acquisition of AI Technologies</h3>
+<p>Part of the motivation for the TrustedAI effort was to help inform the <em>procurment</em> and <em>evaluation</em> of AI based technologies by the United States Navy in concert with the RAI and other Department of Defense guidelines. As outlined in <span class="citation" data-cites="Bowne2022-rc">(<a href="#ref-Bowne2022-rc" role="doc-biblioref">Bowne and McMartin 2022</a>)</span>, this will likely require changes in how the DoD procures and evaluates AI technologies as well as changing the <strong>legal</strong> landscape in terms of licensing and contracting with AI technology suppliers. Changes in this landscape will likely require suppliers to adopt new tooling for provenance capture with respect to data and model to ensure compliance with RAI guidelines. Luckly, as technology development moves toward the “Software 2.0” paradigm, these considerations can be built into the software development infrastructure to help ensure better adherence to the RAI tenets. The Trusted AI Frameworks aim to help inform a preliminary iteration of what these tools and best practices for technology suppliers could look like.</p>
+</section>
+</section>
+<section id="leveraging-ai-community-tools" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="leveraging-ai-community-tools"><span class="header-section-number">3</span> Leveraging AI Community Tools</h2>
+<p>As outlined in the <a href="#Introduction">Introduction</a>, part of the goal for the Frameworks project was to identify tools that could be leveraged as part of the AI software lifecycle that provided functionality with respect to the dimensions of trust. One attribute of trust for (open source) software tools is that there is an active community of developers maintaining the tool and providing a broader community of support for using the tools. After initial consultation with the stakeholders and project members, it was decided that <a href="https://git-scm.com/">Git</a> would be the primary software source control tool and <a href="https://github.com/">Github</a> as the initial source code repository. Github is provides a commercial software source control and collaborative development environment that is friendly to open source developers in providing free public/private repositories. Other options for git source repositories exist such as <a href="https://about.gitlab.com/">Gitlab</a> and the self-hosted <a href="https://gitlab.com/rluna-gitlab/gitlab-ce">Gitlab Community Edition</a> that provide migration paths for git-centric source code repositories if security and privacy requirements require self-hosted options.</p>
+<p>One way to enable Data-Centric AI <span class="citation" data-cites="Liang2022-yz">(<a href="#ref-Liang2022-yz" role="doc-biblioref">Liang et al. 2022</a>)</span> within the “GitOps ecosystem” is through the use of <a href="https://dvc.org/">Data Version Control</a> (DVC) that facilitates tracking of ML Models and Datasets by direct integration into the git version control system. DVC allows data to be versioned and then stored outside git repositories in a wide variety of data storage systems facilitating the use of larger datasets and storage systems than could be otherwise accommodated by git or through the use of <a href="https://git-lfs.github.com/">Git Large File Storage</a>. DVC also has tools to help facilitate experiment reproducibility by maintaining information about input data, configuration and code used to run an experiment all within the git source control environment. The <em>general</em> methodology for the <em>core</em> Trusted AI Framework is that all model code, data preparation code, and training workflows are tracked within a <strong>Git Repository</strong>. Training data, generated models, and analytics are tracked by <strong>DVC</strong> and enabeling a potentially <strong>separate data storage environment</strong> using one of the <a href="https://dvc.org/doc/command-reference/remote/add#supported-storage-types">DVC Supported storage types</a>.</p>
+</section>
+<section id="tai-projects-as-framework-testbeds" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="tai-projects-as-framework-testbeds"><span class="header-section-number">4</span> TAI Projects as Framework Testbeds</h2>
+<p>Several TrustedAI projects were used as use case/test environments for the Core Framework tools during the first year of TrustedAI. These projects provided different data/machine learning model requirements to explore how effective the tools and methodology are in</p>
+<ul>
+<li><a href="https://github.com/nd-crane/shipfailures-kg">Knowledge Graph Construction using Natural Language Processing Tools</a> <!-- 
+- [Application to Vision Task Workflow](https://nd-crane.github.io/paper-analytical-devices)
+- [Stats project]()
+ --></li>
+</ul>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Bowne2022-rc" class="csl-entry" role="listitem">
+Bowne, Andrew, and Benjamin McMartin. 2022. <span>“Implementing Responsible <span>AI</span>: Proposed Framework for Data Licensing.”</span> 10. George Mason University Center for Government Contracting; George Mason University School of Business. <a href="https://business.gmu.edu/news/2022-04/no-10-implementing-responsible-ai-proposed-framework-data-licensing">https://business.gmu.edu/news/2022-04/no-10-implementing-responsible-ai-proposed-framework-data-licensing</a>.
+</div>
+<div id="ref-USDOD2020-lk" class="csl-entry" role="listitem">
+<span>“<span>DoD</span> Data Strategy: Unleashing Data to Advance the National Defense Strategy.”</span> 2020. United States Department of Defense. <a href="https://media.defense.gov/2020/Oct/08/2002514180/-1/-1/0/DOD-DATA-STRATEGY.PDF">https://media.defense.gov/2020/Oct/08/2002514180/-1/-1/0/DOD-DATA-STRATEGY.PDF</a>.
+</div>
+<div id="ref-Hicks2021-aj" class="csl-entry" role="listitem">
+Hicks, Kathleen. 2021. <span>“Implementing Responsible Artificial Intelligence in the Department of Defense.”</span> United States Department of Defense. <a href="https://media.defense.gov/2021/may/27/2002730593/-1/-1/0/implementing-responsible-artificial-intelligence-in-the-department-of-defense.pdf">https://media.defense.gov/2021/may/27/2002730593/-1/-1/0/implementing-responsible-artificial-intelligence-in-the-department-of-defense.pdf</a>.
+</div>
+<div id="ref-Ilievski2021-eb" class="csl-entry" role="listitem">
+Ilievski, Filip, Alessandro Oltramari, Kaixin Ma, Bin Zhang, Deborah L McGuinness, and Pedro Szekely. 2021. <span>“Dimensions of Commonsense Knowledge.”</span> <em>Knowledge-Based Systems</em> 229 (October): 107347. <a href="https://doi.org/10.1016/j.knosys.2021.107347">https://doi.org/10.1016/j.knosys.2021.107347</a>.
+</div>
+<div id="ref-JAIC-Ethical-xu" class="csl-entry" role="listitem">
+Joint Center for Artificial Intelligence. 2020. <span>“Ethical Principles for Artificial Intelligence.”</span> United States Department of Defense. <a href="https://www.ai.mil/docs/Ethical_Principles_for_Artificial_Intelligence.pdf">https://www.ai.mil/docs/Ethical_Principles_for_Artificial_Intelligence.pdf</a>.
+</div>
+<div id="ref-Liang2022-yz" class="csl-entry" role="listitem">
+Liang, Weixin, Girmaw Abebe Tadesse, Daniel Ho, Fei-Fei Li, Matei Zaharia, Ce Zhang, and James Zou. 2022. <span>“Advances, Challenges and Opportunities in Creating Data for Trustworthy <span>AI</span>.”</span> <em>Nat Mach Intell</em>, August, 1–9. <a href="https://www.nature.com/articles/s42256-022-00516-1">https://www.nature.com/articles/s42256-022-00516-1</a>.
+</div>
+<div id="ref-Liu2022-ie" class="csl-entry" role="listitem">
+Liu, Haochen, Yiqi Wang, Wenqi Fan, Xiaorui Liu, Yaxin Li, Shaili Jain, Yunhao Liu, Anil K Jain, and Jiliang Tang. 2022. <span>“Trustworthy <span>AI</span>: A Computational Perspective.”</span> <em>ACM Trans. Intell. Syst. Technol.</em>, June. <a href="https://dl.acm.org/doi/10.1145/3546872">https://dl.acm.org/doi/10.1145/3546872</a>.
+</div>
+<div id="ref-Smuha_undated-da" class="csl-entry" role="listitem">
+Smuha, Nathalie, ed. n.d. <span>“Ethics Guidelines for Trustworthy <span>AI</span>.”</span> European Commission. <a href="https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai">https://digital-strategy.ec.europa.eu/en/library/ethics-guidelines-trustworthy-ai</a>.
+</div>
+<div id="ref-Toreini2020-fj" class="csl-entry" role="listitem">
+Toreini, Ehsan, Mhairi Aitken, Kovila Coopamootoo, Karen Elliott, Carlos Gonzalez Zelaya, and Aad van Moorsel. 2020. <span>“The Relationship Between Trust in <span>AI</span> and Trustworthy Machine Learning Technologies.”</span> In <em>Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency</em>, 272–83. FAT* ’20. New York, NY, USA: Association for Computing Machinery. <a href="https://dl.acm.org/doi/abs/10.1145/3351095.3372834">https://dl.acm.org/doi/abs/10.1145/3351095.3372834</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../Projects/Frameworks_Infrastructure_Development/frameworks_infrastructure_development.html" class="pagination-link" aria-label="Trusted AI - Frameworks Infrastructure Development">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Trusted AI - Frameworks Infrastructure Development</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../Projects/Frameworks_Infrastructure_Development/components.html" class="pagination-link" aria-label="Framework Components">
+        <span class="nav-page-text">Framework Components</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nd-crane/nd-crane.github.io/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
