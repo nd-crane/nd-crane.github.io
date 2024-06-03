@@ -1,0 +1,6 @@
+---
+title: "Trusted AI - Statistical Analysis and Measurement"
+# bibliography: tai_kgnlp.bib
+number-sections: true
+author: Chris Sweet
+---

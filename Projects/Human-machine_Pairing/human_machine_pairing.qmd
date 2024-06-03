@@ -1,0 +1,6 @@
+---
+title: "Trusted AI - Human Machine Paring"
+# bibliography: tai_kgnlp.bib
+number-sections: true
+author: Adam Czajka
+---

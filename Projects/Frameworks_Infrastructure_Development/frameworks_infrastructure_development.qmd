@@ -1,0 +1,8 @@
+---
+title: "Trusted AI - Frameworks Infrastructure Development"
+# bibliography: tai_kgnlp.bib
+number-sections: true
+author: Charles F. Vardeman II, Paul Brenner, Chris Sweet
+---
+
+## Frameworks

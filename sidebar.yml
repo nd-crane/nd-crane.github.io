@@ -4,12 +4,24 @@ website:
       - index.qmd
       - section: Projects
         contents:
-          - section: Frameworks
+          - section: Human-machine Pairing for Trustworthy AI
             contents:
-              - Projects/Frameworks/framework.qmd
-              - Projects/Frameworks/components.qmd
-              - Projects/Frameworks/tutorial.qmd
-              - Projects/Frameworks/basic_guidelines.qmd
-          - section: Knowledge Graphs and NLP
+              - Projects/Human-machine_Pairing/human_machine_pairing.qmd
+          - section: Trust and Verifiability in AI
             contents:
-              - Projects/KG_NLP/kg_nlp.qmd
+              - Projects/Trust_and_Verifiability/trust_and_verifiability.qmd
+          - section: Statistical Analysis and Measurement of Neural Networks
+            contents:
+              - Projects/Statistical_Analysis_and_Measurement/statistical_analysis_and_measurement.qmd
+          - section: Knowledge Representation and Engineering
+            contents:
+              - Projects/Knowledge_Representation_and_Engineering/knowledge_representation_and_engineering.qmd
+              - Projects/Knowledge_Representation_and_Engineering/kg_nlp.qmd
+          - section: Framework Infrastructure Development
+            contents:
+              - Projects/Frameworks_Infrastructure_Development/frameworks_infrastructure_development.qmd
+              - Projects/Frameworks_Infrastructure_Development/framework.qmd
+              - Projects/Frameworks_Infrastructure_Development/components.qmd
+              - Projects/Frameworks_Infrastructure_Development/tutorial.qmd
+              - Projects/Frameworks_Infrastructure_Development/basic_guidelines.qmd
+
